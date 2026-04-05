@@ -1,0 +1,108 @@
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { Plus_Jakarta_Sans, Sora } from 'next/font/google';
+import "./globals.css";
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: "FinCalc India - India's Fastest Financial Calculators",
+  description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors with multilingual support.",
+  keywords: "financial calculator, PPF calculator, FD calculator, SIP calculator, tax calculator, EMI calculator, India, investment",
+  authors: [{ name: "FinCalc India" }],
+  creator: "FinCalc India",
+  publisher: "FinCalc India",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://fincalc.in",
+    siteName: "FinCalc India",
+    title: "FinCalc India - India's Fastest Financial Calculators",
+    description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors.",
+    images: [
+      {
+        url: "/og/homepage.png",
+        width: 1200,
+        height: 630,
+        alt: "FinCalc India - Financial Calculators",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FinCalc India - India's Fastest Financial Calculators",
+    description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors.",
+    images: ["/og/homepage.png"],
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+};
+
+export default async function RootLayout({
+  children,
+  params: { locale }
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale} className={`${plusJakartaSans.variable} ${sora.variable}`}>
+      <head>
+        {/* Google Fonts Preload */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        
+        {/* AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossOrigin="anonymous"
+        />
+        
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX');
+            `,
+          }}
+        />
+      </head>
+      <body className="font-body antialiased bg-gray-50 text-gray-900">
+        <NextIntlClientProvider messages={messages}>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}
