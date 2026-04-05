@@ -73,17 +73,17 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-50 via-white to-green-50 py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-green-50 dark:from-slate-800 dark:via-slate-900 dark:to-emerald-950 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="font-bold text-4xl lg:text-6xl text-gray-900 mb-6">
+            <h1 className="font-bold text-4xl lg:text-6xl text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-6">
               <span className="text-emerald-600">Smart Money</span><br />
               for Every Indian
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               Calculate. Plan. Grow. Make informed investment decisions 
               with BharatFin's free, accurate financial calculators designed for Indian investors.
             </p>
@@ -92,19 +92,19 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="text-3xl font-bold text-emerald-600">15+</div>
-                <div className="text-sm text-gray-600">Calculators</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 dark:text-gray-400">Calculators</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">8</div>
-                <div className="text-sm text-gray-600">Languages</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 dark:text-gray-400">Languages</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-600">100%</div>
-                <div className="text-sm text-gray-600">Free</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 dark:text-gray-400">Free</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-600">0s</div>
-                <div className="text-sm text-gray-600">Load Time</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 dark:text-gray-400">Load Time</div>
               </div>
             </div>
           </div>
@@ -112,13 +112,13 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
       </section>
 
       {/* Popular Calculators */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-800 dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-bold text-3xl text-gray-900 mb-4">
+            <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-4">
               Popular Financial Calculators
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Most used calculators by Indian investors and professionals
             </p>
           </div>
@@ -128,15 +128,15 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
               <Link
                 key={calc.name}
                 href={calc.href}
-                className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-200"
+                className="group bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-600 rounded-xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{calc.icon}</div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-emerald-600 mb-2">
+                    <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 mb-2">
                       {calc.name}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
                       {calc.description}
                     </p>
                     <div className="flex items-center text-emerald-600 text-sm font-medium">
@@ -155,10 +155,10 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-bold text-3xl text-gray-900 mb-4">
+            <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-4">
               Why Choose FinCalc India?
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Built specifically for Indian investors with accuracy and speed in mind
             </p>
           </div>
@@ -169,10 +169,10 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
                 <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   {feature.description}
                 </p>
               </div>
@@ -182,9 +182,9 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
       </section>
 
       {/* Language Switcher */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-800">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-3xl text-gray-900 mb-8">
+          <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-8">
             Available in 8 Indian Languages
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -202,7 +202,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
                 key={lang.code}
                 href={`/${lang.code}/simple-page`}
                 className={`p-4 border rounded-lg hover:bg-gray-50 transition-colors ${
-                  locale === lang.code ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200'
+                  locale === lang.code ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200 dark:border-gray-600'
                 }`}
               >
                 <div className="text-2xl mb-2">{lang.flag}</div>

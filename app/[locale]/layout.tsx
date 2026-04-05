@@ -4,6 +4,7 @@ import Script from 'next/script';
 import "./globals.css";
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -72,8 +73,25 @@ export default async function RootLayout({
         {/* Google Fonts Preload */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        
+        {/* Theme color meta tag */}
+        <meta name="theme-color" content="#FFFFFF" />
+        
+        {/* Prevent flash of unstyled content */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || 'system';
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = theme === 'dark' || (theme === 'system' && systemDark);
+                document.documentElement.classList.add(isDark ? 'dark' : 'light');
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body className="font-body antialiased bg-gray-50 text-gray-900">
+      <body className="font-body antialiased bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors">
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -95,13 +113,15 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
         
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
