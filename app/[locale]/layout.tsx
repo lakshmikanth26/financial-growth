@@ -74,18 +74,15 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         
-        {/* Theme color meta tag */}
-        <meta name="theme-color" content="#FFFFFF" />
+        {/* Theme color meta tag - dark theme */}
+        <meta name="theme-color" content="#0F172A" />
         
-        {/* Theme initialization script */}
+        {/* Always use dark theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                var theme = localStorage.getItem('theme') || 'system';
-                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var isDark = theme === 'dark' || (theme === 'system' && systemDark);
-                document.documentElement.classList.add(isDark ? 'dark' : 'light');
+                document.documentElement.classList.add('dark');
               } catch (e) {}
             `,
           }}

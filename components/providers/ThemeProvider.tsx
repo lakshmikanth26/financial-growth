@@ -14,70 +14,40 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('system');
-  const [actualTheme, setActualTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [actualTheme, setActualTheme] = useState<'light' | 'dark'>('dark');
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Initialize theme after hydration
+  // Initialize theme after hydration - always use dark theme
   useEffect(() => {
     setIsHydrated(true);
-    
-    // Get theme from localStorage or default to system
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
-      setTheme(savedTheme);
-    }
+    setTheme('dark');
+    setActualTheme('dark');
   }, []);
 
   useEffect(() => {
     if (!isHydrated) return;
 
-    const updateActualTheme = () => {
-      let newActualTheme: 'light' | 'dark';
-      
-      if (theme === 'system') {
-        newActualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      } else {
-        newActualTheme = theme;
-      }
-      
-      setActualTheme(newActualTheme);
-      
-      // Update document class only on client
-      if (typeof window !== 'undefined') {
-        const root = document.documentElement;
-        root.classList.remove('light', 'dark');
-        root.classList.add(newActualTheme);
-        
-        // Update meta theme-color
-        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (metaThemeColor) {
-          metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#0F172A' : '#FFFFFF');
-        }
-      }
-    };
-
-    updateActualTheme();
+    // Always use dark theme
+    setActualTheme('dark');
     
-    // Listen for system theme changes only on client
+    // Update document class only on client
     if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = () => {
-        if (theme === 'system') {
-          updateActualTheme();
-        }
-      };
+      const root = document.documentElement;
+      root.classList.remove('light', 'dark');
+      root.classList.add('dark');
       
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
+      // Update meta theme-color for dark theme
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', '#0F172A');
+      }
     }
-  }, [theme, isHydrated]);
+  }, [isHydrated]);
 
   const handleSetTheme = (newTheme: Theme) => {
-    setTheme(newTheme);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', newTheme);
-    }
+    // Always keep dark theme
+    setTheme('dark');
   };
 
   return (
