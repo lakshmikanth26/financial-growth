@@ -12,8 +12,18 @@ const themes = [
 
 export function ThemeSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme, actualTheme } = useTheme();
+  const { theme, setTheme, actualTheme, isHydrated } = useTheme();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Don't render until hydrated to prevent mismatch
+  if (!isHydrated) {
+    return (
+      <div className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg">
+        <Monitor className="h-4 w-4" />
+        <span className="hidden sm:inline">Theme</span>
+      </div>
+    );
+  }
 
   const currentTheme = themes.find(t => t.id === theme) || themes[0];
   const CurrentIcon = currentTheme.icon;

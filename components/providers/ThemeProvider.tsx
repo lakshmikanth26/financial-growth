@@ -8,6 +8,7 @@ interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   actualTheme: 'light' | 'dark';
+  isHydrated: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -15,8 +16,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('system');
   const [actualTheme, setActualTheme] = useState<'light' | 'dark'>('light');
+  const [isHydrated, setIsHydrated] = useState(false);
 
+  // Initialize theme after hydration
   useEffect(() => {
+    setIsHydrated(true);
+    
     // Get theme from localStorage or default to system
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
@@ -25,6 +30,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (!isHydrated) return;
+
     const updateActualTheme = () => {
       let newActualTheme: 'light' | 'dark';
       
@@ -36,39 +43,45 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       
       setActualTheme(newActualTheme);
       
-      // Update document class
-      const root = document.documentElement;
-      root.classList.remove('light', 'dark');
-      root.classList.add(newActualTheme);
-      
-      // Update meta theme-color
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#0F172A' : '#FFFFFF');
+      // Update document class only on client
+      if (typeof window !== 'undefined') {
+        const root = document.documentElement;
+        root.classList.remove('light', 'dark');
+        root.classList.add(newActualTheme);
+        
+        // Update meta theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', newActualTheme === 'dark' ? '#0F172A' : '#FFFFFF');
+        }
       }
     };
 
     updateActualTheme();
     
-    // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => {
-      if (theme === 'system') {
-        updateActualTheme();
-      }
-    };
-    
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
+    // Listen for system theme changes only on client
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = () => {
+        if (theme === 'system') {
+          updateActualTheme();
+        }
+      };
+      
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+  }, [theme, isHydrated]);
 
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', newTheme);
+    }
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme, actualTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme, actualTheme, isHydrated }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -68,7 +68,7 @@ export default async function RootLayout({
   const { locale } = await params;
 
   return (
-    <html lang={locale} className={`${plusJakartaSans.variable} ${sora.variable}`}>
+    <html lang={locale} className={`${plusJakartaSans.variable} ${sora.variable}`} suppressHydrationWarning>
       <head>
         {/* Google Fonts Preload */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,22 +77,16 @@ export default async function RootLayout({
         {/* Theme color meta tag */}
         <meta name="theme-color" content="#FFFFFF" />
         
-        {/* Prevent flash of unstyled content */}
+        {/* Theme initialization script */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'system';
-                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var isDark = theme === 'dark' || (theme === 'system' && systemDark);
-                  var htmlElement = document.documentElement;
-                  htmlElement.classList.remove('light', 'dark');
-                  htmlElement.classList.add(isDark ? 'dark' : 'light');
-                } catch (e) {
-                  document.documentElement.classList.add('light');
-                }
-              })();
+              try {
+                var theme = localStorage.getItem('theme') || 'system';
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var isDark = theme === 'dark' || (theme === 'system' && systemDark);
+                document.documentElement.classList.add(isDark ? 'dark' : 'light');
+              } catch (e) {}
             `,
           }}
         />
