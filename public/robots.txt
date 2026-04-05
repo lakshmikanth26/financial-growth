@@ -1,11 +1,4 @@
-# *
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-# Host
-Host: https://bharathfin.vercel.app
-
-# Sitemaps
 Sitemap: https://bharathfin.vercel.app/sitemap.xml
