@@ -5,7 +5,7 @@ Disallow: /api/
 Disallow: /admin/
 
 # Host
-Host: https://fincalc.in
+Host: https://bharatfin.in
 
 # Sitemaps
-Sitemap: https://fincalc.in/sitemap.xml
+Sitemap: https://bharatfin.in/sitemap.xml

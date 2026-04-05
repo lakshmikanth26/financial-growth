@@ -5,35 +5,35 @@ module.exports = {
   exclude: ['/api/*', '/admin/*'],
   alternateRefs: [
     {
-      href: 'https://fincalc.in/en',
+      href: 'https://bharatfin.in/en',
       hreflang: 'en',
     },
     {
-      href: 'https://fincalc.in/hi',
+      href: 'https://bharatfin.in/hi',
       hreflang: 'hi',
     },
     {
-      href: 'https://fincalc.in/ta',
+      href: 'https://bharatfin.in/ta',
       hreflang: 'ta',
     },
     {
-      href: 'https://fincalc.in/te',
+      href: 'https://bharatfin.in/te',
       hreflang: 'te',
     },
     {
-      href: 'https://fincalc.in/kn',
+      href: 'https://bharatfin.in/kn',
       hreflang: 'kn',
     },
     {
-      href: 'https://fincalc.in/bn',
+      href: 'https://bharatfin.in/bn',
       hreflang: 'bn',
     },
     {
-      href: 'https://fincalc.in/mr',
+      href: 'https://bharatfin.in/mr',
       hreflang: 'mr',
     },
     {
-      href: 'https://fincalc.in/gu',
+      href: 'https://bharatfin.in/gu',
       hreflang: 'gu',
     },
   ],
@@ -46,7 +46,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://fincalc.in/sitemap.xml',
+      'https://bharatfin.in/sitemap.xml',
     ],
   },
 }

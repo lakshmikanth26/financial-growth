@@ -77,6 +77,9 @@ export default async function RootLayout({
         {/* Theme color meta tag - dark theme */}
         <meta name="theme-color" content="#0F172A" />
         
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="bbd4586cc9bc9ac8" />
+        
         {/* Always use dark theme */}
         <script
           dangerouslySetInnerHTML={{
