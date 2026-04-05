@@ -123,7 +123,7 @@ export function Footer() {
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               © 2025 BharatFin. All rights reserved. Made with ❤️ for Indian investors.
             </div>
-            <div className="text-xs text-gray-500 text-center md:text-right max-w-md">
+            <div className="text-xs text-gray-500 dark:text-gray-400 text-center md:text-right max-w-md">
               <p className="mb-1">
                 <strong>Disclaimer:</strong> This website provides calculators for educational purposes only. 
                 Past performance does not guarantee future results. Please consult a financial advisor for investment decisions.

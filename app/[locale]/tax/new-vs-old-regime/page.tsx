@@ -84,7 +84,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
       <HeaderAdSlot />
       
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200">
+      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -111,7 +111,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 Tax Calculator
@@ -124,7 +124,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Annual Income</label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                       <input
                         type="number"
                         min="0"
@@ -165,7 +165,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                       Section 80C (Max: ₹1.5L)
                     </label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                       <input
                         type="number"
                         min="0"
@@ -175,7 +175,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">PPF, ELSS, EPF, Life Insurance, etc.</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">PPF, ELSS, EPF, Life Insurance, etc.</p>
                   </div>
 
                   <div>
@@ -183,7 +183,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                       Section 80D (Health Insurance)
                     </label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                       <input
                         type="number"
                         min="0"
@@ -192,14 +192,14 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">Max: ₹25K (₹50K for senior citizens)</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Max: ₹25K (₹50K for senior citizens)</p>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">HRA Exemption</label>
                     <div className="flex space-x-2">
                       <div className="relative flex-1">
-                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                         <input
                           type="number"
                           min="0"
@@ -222,7 +222,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                       Home Loan Interest (Max: ₹2L)
                     </label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                       <input
                         type="number"
                         min="0"
@@ -241,7 +241,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
             
             {/* Results */}
             {comparison && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Tax Comparison Results</h2>
                 
                 {/* Recommendation */}
@@ -348,7 +348,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
 
             {/* Charts */}
             {comparison && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Visual Comparison</h2>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -373,7 +373,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                     <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-4">Section 80C Investment Options</h3>
                     <div className="space-y-2 max-h-72 overflow-y-auto">
                       {investments80C.slice(0, 6).map((investment) => (
-                        <div key={investment.name} className="border border-gray-200 rounded-lg p-3">
+                        <div key={investment.name} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <h4 className="font-medium text-gray-900 dark:text-gray-100 text-sm">{investment.name}</h4>
                           <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">{investment.description}</p>
                           <p className="text-xs font-medium text-blue-600">Max: {formatCurrency(investment.limit)}</p>
@@ -402,14 +402,14 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
               </div>
 
               {/* Related Calculators */}
-              <div className="bg-white dark:bg-slate-800 border border-gray-200 rounded-xl p-6">
+              <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Related Calculators</h3>
                 <div className="space-y-3">
-                  <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">🏛️</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">PPF Calculator</span>
                   </Link>
-                  <Link href="/en/calculators/fd" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/fd" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">🏦</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">FD Calculator</span>
                   </Link>

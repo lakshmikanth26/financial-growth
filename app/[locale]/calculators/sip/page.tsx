@@ -59,7 +59,7 @@ export default function SIPCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'calculate'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                 }`}
               >
                 <Calculator className="h-4 w-4 inline mr-2" />
@@ -70,7 +70,7 @@ export default function SIPCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'target'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                 }`}
               >
                 <Target className="h-4 w-4 inline mr-2" />
@@ -104,7 +104,7 @@ export default function SIPCalculatorPage() {
                 value={input.monthlyInvestment}
                 onChange={(e) => setInput({ ...input, monthlyInvestment: Number(e.target.value) })}
                 disabled={mode === 'target'}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 dark:disabled:bg-slate-600"
                 placeholder="Enter monthly investment"
               />
             </div>
@@ -148,7 +148,7 @@ export default function SIPCalculatorPage() {
                 className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter step-up percentage"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 Increase your SIP amount by this percentage every year
               </p>
             </div>

@@ -65,7 +65,7 @@ export default function RDCalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'calculate'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                   }`}
                 >
                   <Calculator className="h-4 w-4 inline mr-2" />
@@ -76,7 +76,7 @@ export default function RDCalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'target'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                   }`}
                 >
                   <Target className="h-4 w-4 inline mr-2" />
@@ -110,7 +110,7 @@ export default function RDCalculatorPage() {
                   value={input.monthlyDeposit}
                   onChange={(e) => setInput({ ...input, monthlyDeposit: Number(e.target.value) })}
                   disabled={mode === 'target'}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 dark:disabled:bg-slate-600"
                   placeholder="Enter monthly deposit"
                 />
               </div>
@@ -171,7 +171,7 @@ export default function RDCalculatorPage() {
             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Current RD Rates from Major Banks</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {Object.entries(bankRates).map(([key, bank]) => (
-                <div key={key} className="p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+                <div key={key} className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-colors">
                   <div className="font-medium text-gray-900 dark:text-gray-100">{bank.bank}</div>
                   <div className="text-2xl font-bold text-blue-600">{bank.rate}%</div>
                   <button

@@ -60,7 +60,7 @@ export default function EMICalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'calculate'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                   }`}
                 >
                   <Calculator className="h-4 w-4 inline mr-2" />
@@ -71,7 +71,7 @@ export default function EMICalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'affordability'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                   }`}
                 >
                   <Target className="h-4 w-4 inline mr-2" />

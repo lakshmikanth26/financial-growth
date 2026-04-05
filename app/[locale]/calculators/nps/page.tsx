@@ -64,7 +64,7 @@ export default function NPSCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'calculate'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                 }`}
               >
                 <Calculator className="h-4 w-4 inline mr-2" />
@@ -75,7 +75,7 @@ export default function NPSCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'target'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-slate-500'
                 }`}
               >
                 <Target className="h-4 w-4 inline mr-2" />
@@ -128,7 +128,7 @@ export default function NPSCalculatorPage() {
                 min="60"
                 max="75"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 Minimum retirement age is 60 years for NPS
               </p>
             </div>
@@ -142,7 +142,7 @@ export default function NPSCalculatorPage() {
                 value={input.monthlyContribution}
                 onChange={(e) => setInput({ ...input, monthlyContribution: Number(e.target.value) })}
                 disabled={mode === 'target'}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 dark:disabled:bg-slate-600"
                 placeholder="Enter monthly contribution"
               />
             </div>
@@ -173,7 +173,7 @@ export default function NPSCalculatorPage() {
                 className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter annuity return"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 Expected return on annuity portion (40% of corpus)
               </p>
             </div>

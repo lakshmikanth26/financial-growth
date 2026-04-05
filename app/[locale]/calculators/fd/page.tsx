@@ -52,7 +52,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
       <HeaderAdSlot />
       
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200">
+      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -79,7 +79,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 FD Calculator
@@ -90,7 +90,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Principal Amount</label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                     <input
                       type="number"
                       min="1000"
@@ -113,7 +113,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                       onChange={(e) => setInputs({...inputs, interestRate: Number(e.target.value)})}
                       className="w-full px-4 pr-8 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
-                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">%</span>
                   </div>
                 </div>
 
@@ -163,7 +163,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
               <div className="space-y-4">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Interest Payout</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50">
+                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700">
                     <input
                       type="radio"
                       name="interestPayout"
@@ -178,7 +178,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                     </div>
                   </label>
                   
-                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50">
+                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-700">
                     <input
                       type="radio"
                       name="interestPayout"
@@ -220,7 +220,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
             
             {/* Results */}
             {result && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Results</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -273,12 +273,12 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
 
             {/* Bank Rate Comparison */}
             {showBankComparison && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Bank Rate Comparison (Latest Rates)</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
                     <thead>
-                      <tr className="bg-gray-50">
+                      <tr className="bg-gray-50 dark:bg-slate-700">
                         <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">Bank</th>
                         <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">1 Year</th>
                         <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">2 Years</th>
@@ -289,7 +289,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                     </thead>
                     <tbody>
                       {bankRates.map((bank) => (
-                        <tr key={bank.bankName} className="hover:bg-gray-50">
+                        <tr key={bank.bankName} className="hover:bg-gray-50 dark:hover:bg-slate-700">
                           <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 font-medium">{bank.bankName}</td>
                           <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate1Year}%</td>
                           <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate2Year}%</td>
@@ -324,14 +324,14 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
               </div>
 
               {/* Related Calculators */}
-              <div className="bg-white dark:bg-slate-800 border border-gray-200 rounded-xl p-6">
+              <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Related Calculators</h3>
                 <div className="space-y-3">
-                  <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">🏛️</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">PPF Calculator</span>
                   </Link>
-                  <Link href="/en/calculators/rd" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/rd" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">💰</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">RD Calculator</span>
                   </Link>

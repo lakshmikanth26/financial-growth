@@ -81,12 +81,18 @@ export default async function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              try {
-                const theme = localStorage.getItem('theme') || 'system';
-                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const isDark = theme === 'dark' || (theme === 'system' && systemDark);
-                document.documentElement.classList.add(isDark ? 'dark' : 'light');
-              } catch (e) {}
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme') || 'system';
+                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = theme === 'dark' || (theme === 'system' && systemDark);
+                  var htmlElement = document.documentElement;
+                  htmlElement.classList.remove('light', 'dark');
+                  htmlElement.classList.add(isDark ? 'dark' : 'light');
+                } catch (e) {
+                  document.documentElement.classList.add('light');
+                }
+              })();
             `,
           }}
         />

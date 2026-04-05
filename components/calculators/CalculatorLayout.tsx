@@ -139,7 +139,7 @@ export function CalculatorLayout({
                     <a
                       key={calc.name}
                       href={calc.href}
-                      className="flex items-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors"
+                      className="flex items-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
                     >
                       <span className="text-2xl mr-3">{calc.icon}</span>
                       <span className="font-medium text-gray-900 dark:text-gray-100">{calc.name}</span>

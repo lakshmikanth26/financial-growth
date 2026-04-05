@@ -51,7 +51,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
       <HeaderAdSlot />
       
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200">
+      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -78,7 +78,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 PPF Calculator
@@ -90,7 +90,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                     Yearly Deposit
                   </label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">₹</span>
                     <input
                       type="number"
                       min="500"
@@ -100,7 +100,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                       className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">Min: ₹500 - Max: ₹1,50,000</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Min: ₹500 - Max: ₹1,50,000</p>
                 </div>
 
                 <div className="relative">
@@ -123,7 +123,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">15-year lock-in period</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">15-year lock-in period</p>
                 </div>
 
                 <div>
@@ -140,7 +140,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                       onChange={(e) => setInputs({...inputs, currentRate: Number(e.target.value)})}
                       className="w-full px-4 pr-8 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
-                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">%</span>
                   </div>
                   <p className="text-xs text-green-600 mt-1">Tax-free returns (EEE status)</p>
                 </div>
@@ -151,7 +151,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
             
             {/* Results */}
             {result && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Results</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -165,7 +165,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                     <p className="text-3xl font-bold text-green-600">{formatCurrency(result.totalInterest)}</p>
                   </div>
                   
-                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+                  <div className="bg-gray-50 dark:bg-slate-700 border border-gray-200 dark:border-gray-700 dark:border-gray-600 rounded-xl p-6 text-center">
                     <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Total Invested</h3>
                     <p className="text-3xl font-bold text-gray-600 dark:text-gray-400">{formatCurrency(result.totalInvested)}</p>
                   </div>
@@ -175,7 +175,7 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
 
             {/* Charts */}
             {result && (
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Visual Breakdown</h2>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -227,14 +227,14 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
             )}
 
             {/* FAQ */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Frequently Asked Questions</h2>
               
               <div className="space-y-4">
                 <details className="group">
-                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 dark:bg-slate-700 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition-colors">
                     <span className="font-medium text-gray-900 dark:text-gray-100">What is PPF?</span>
-                    <span className="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+                    <span className="text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <div className="p-4 text-gray-700 dark:text-gray-300 border-l-4 border-blue-200 ml-4 mt-2">
                     Public Provident Fund (PPF) is a long-term savings scheme backed by the Government of India with a 15-year lock-in period and tax benefits under Section 80C.
@@ -242,9 +242,9 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                 </details>
 
                 <details className="group">
-                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 dark:bg-slate-700 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition-colors">
                     <span className="font-medium text-gray-900 dark:text-gray-100">What is the current PPF interest rate?</span>
-                    <span className="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+                    <span className="text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <div className="p-4 text-gray-700 dark:text-gray-300 border-l-4 border-blue-200 ml-4 mt-2">
                     The current PPF interest rate for Q1 FY2025-26 is 7.1% per annum, compounded annually.
@@ -252,9 +252,9 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
                 </details>
 
                 <details className="group">
-                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <summary className="flex justify-between items-center cursor-pointer p-4 bg-gray-50 dark:bg-slate-700 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition-colors">
                     <span className="font-medium text-gray-900 dark:text-gray-100">Is PPF interest taxable?</span>
-                    <span className="text-gray-500 group-open:rotate-180 transition-transform">▼</span>
+                    <span className="text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <div className="p-4 text-gray-700 dark:text-gray-300 border-l-4 border-blue-200 ml-4 mt-2">
                     No. PPF enjoys EEE (Exempt-Exempt-Exempt) status - deposits, interest, and maturity amount are all tax-free.
@@ -280,18 +280,18 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
               </div>
 
               {/* Related Calculators */}
-              <div className="bg-white dark:bg-slate-800 border border-gray-200 rounded-xl p-6">
+              <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Related Calculators</h3>
                 <div className="space-y-3">
-                  <Link href="/en/calculators/fd" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/fd" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">🏦</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">FD Calculator</span>
                   </Link>
-                  <Link href="/en/calculators/sip" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/calculators/sip" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">📈</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">SIP Calculator</span>
                   </Link>
-                  <Link href="/en/tax/new-vs-old-regime" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
+                  <Link href="/en/tax/new-vs-old-regime" className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
                     <span className="text-2xl mr-3">💰</span>
                     <span className="font-medium text-gray-900 dark:text-gray-100">Tax Calculator</span>
                   </Link>
