@@ -1,8 +1,11 @@
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Calculator, TrendingUp, Shield, Zap, Globe, Users } from 'lucide-react';
+import { HeaderAdSlot, InContentAdSlot } from '@/components/layout/AdSlot';
 
-export default async function SimplePage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const t = await getTranslations();
 
   const popularCalculators = [
     {
@@ -73,13 +76,12 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="font-bold text-4xl lg:text-6xl text-gray-900 mb-6">
+            <h1 className="font-display text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               India's <span className="text-blue-600">Fastest</span><br />
               Financial Calculators
             </h1>
@@ -88,6 +90,20 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
               with our free, accurate financial calculators designed for Indian investors.
             </p>
             
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-12">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search calculators... (PPF, SIP, Tax, EMI)"
+                  className="w-full px-6 py-4 text-lg border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                />
+                <button className="absolute right-2 top-2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                  <Calculator className="h-6 w-6" />
+                </button>
+              </div>
+            </div>
+
             {/* Quick Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
@@ -111,11 +127,13 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
+      <HeaderAdSlot />
+
       {/* Popular Calculators */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-bold text-3xl text-gray-900 mb-4">
+            <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
               Popular Financial Calculators
             </h2>
             <p className="text-lg text-gray-600">
@@ -133,7 +151,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{calc.icon}</div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 mb-2">
+                    <h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-blue-600 mb-2">
                       {calc.name}
                     </h3>
                     <p className="text-gray-600 text-sm mb-3">
@@ -148,14 +166,26 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
               </Link>
             ))}
           </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href={`/${locale}/calculators`}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              View All Calculators
+              <Calculator className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      <InContentAdSlot />
 
       {/* Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-bold text-3xl text-gray-900 mb-4">
+            <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
               Why Choose FinCalc India?
             </h2>
             <p className="text-lg text-gray-600">
@@ -169,7 +199,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-display font-semibold text-lg text-gray-900 mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">
@@ -181,55 +211,31 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      {/* Language Switcher */}
-      <section className="py-16 bg-white">
+      {/* CTA Section */}
+      <section className="py-16 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-3xl text-gray-900 mb-8">
-            Available in 8 Indian Languages
+          <h2 className="font-display text-3xl font-bold text-white mb-4">
+            Start Planning Your Financial Future Today
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { code: 'en', name: 'English', flag: '🇮🇳' },
-              { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
-              { code: 'ta', name: 'தமிழ்', flag: '🇮🇳' },
-              { code: 'te', name: 'తెలుగు', flag: '🇮🇳' },
-              { code: 'kn', name: 'ಕನ್ನಡ', flag: '🇮🇳' },
-              { code: 'bn', name: 'বাংলা', flag: '🇮🇳' },
-              { code: 'mr', name: 'मराठी', flag: '🇮🇳' },
-              { code: 'gu', name: 'ગુજરાતી', flag: '🇮🇳' }
-            ].map((lang) => (
-              <Link
-                key={lang.code}
-                href={`/${lang.code}/simple-page`}
-                className={`p-4 border rounded-lg hover:bg-gray-50 transition-colors ${
-                  locale === lang.code ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
-                }`}
-              >
-                <div className="text-2xl mb-2">{lang.flag}</div>
-                <div className="font-medium">{lang.name}</div>
-              </Link>
-            ))}
+          <p className="text-xl text-blue-100 mb-8">
+            Join millions of Indians who trust FinCalc India for their investment calculations
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href={`/${locale}/calculators/ppf`}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            >
+              Calculate PPF Returns
+            </Link>
+            <Link
+              href={`/${locale}/calculators/sip`}
+              className="bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors border border-blue-500"
+            >
+              Plan SIP Investment
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Calculator className="h-8 w-8 text-blue-400" />
-            <span className="font-bold text-xl">
-              FinCalc <span className="text-blue-400">India</span>
-            </span>
-          </div>
-          <p className="text-gray-300 mb-4">
-            India's fastest financial calculators for smart investment decisions.
-          </p>
-          <p className="text-sm text-gray-500">
-            © 2025 FinCalc India. Built with ❤️ for Indian investors.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

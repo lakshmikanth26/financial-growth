@@ -1,27 +1,23 @@
 'use client';
 
 import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
 import { Calculator, Mail, Shield, FileText } from 'lucide-react';
 
 export function Footer() {
-  const locale = useLocale();
-  const t = useTranslations('common');
-
   const calculatorLinks = [
-    { name: 'PPF Calculator', href: `/${locale}/calculators/ppf` },
-    { name: 'FD Calculator', href: `/${locale}/calculators/fd` },
-    { name: 'SIP Calculator', href: `/${locale}/calculators/sip` },
-    { name: 'EMI Calculator', href: `/${locale}/calculators/emi` },
-    { name: 'Tax Calculator', href: `/${locale}/tax/new-vs-old-regime` },
-    { name: 'NPS Calculator', href: `/${locale}/calculators/nps` },
+    { name: 'PPF Calculator', href: '/en/calculators/ppf' },
+    { name: 'FD Calculator', href: '/en/calculators/fd' },
+    { name: 'SIP Calculator', href: '/en/calculators/sip' },
+    { name: 'EMI Calculator', href: '/en/calculators/emi' },
+    { name: 'Tax Calculator', href: '/en/tax/new-vs-old-regime' },
+    { name: 'NPS Calculator', href: '/en/calculators/nps' },
   ];
 
   const legalLinks = [
-    { name: 'Privacy Policy', href: `/${locale}/privacy` },
-    { name: 'Terms of Service', href: `/${locale}/terms` },
-    { name: 'Disclaimer', href: `/${locale}/disclaimer` },
-    { name: 'Contact Us', href: `/${locale}/contact` },
+    { name: 'Privacy Policy', href: '/en/privacy' },
+    { name: 'Terms of Service', href: '/en/terms' },
+    { name: 'Disclaimer', href: '/en/disclaimer' },
+    { name: 'Contact Us', href: '/en/contact' },
   ];
 
   return (
@@ -30,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <Link href={`/${locale}`} className="flex items-center space-x-2 mb-4">
+            <Link href="/en" className="flex items-center space-x-2 mb-4">
               <Calculator className="h-8 w-8 text-blue-400" />
               <span className="font-display font-bold text-xl">
                 FinCalc <span className="text-blue-400">India</span>
@@ -69,7 +65,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href={`/${locale}/mutual-funds/top-funds`}
+                  href="/en/mutual-funds/top-funds"
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
                   Top Mutual Funds
@@ -77,7 +73,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/govt-schemes`}
+                  href="/en/govt-schemes"
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
                   Government Schemes
@@ -85,7 +81,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/tax/income-tax-slabs`}
+                  href="/en/tax/income-tax-slabs"
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
                   Tax Slabs 2025-26
@@ -93,7 +89,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/news`}
+                  href="/en/news"
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
                   Financial News

@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "home": "હોમ",
+    "calculators": "કેલ્ક્યુલેટર",
+    "tax": "ટેક્સ ટૂલ્સ",
+    "mutualFunds": "મ્યુચ્યુઅલ ફંડ",
+    "govtSchemes": "સરકારી યોજનાઓ",
+    "business": "બિઝનેસ",
+    "news": "ન્યૂઝ",
+    "language": "ભાષા"
+  },
+  "common": {
+    "calculate": "ગણતરી કરો",
+    "result": "પરિણામ",
+    "amount": "રકમ",
+    "years": "વર્ષો",
+    "months": "મહિનાઓ",
+    "rate": "દર",
+    "percentage": "ટકાવારી",
+    "rupees": "₹",
+    "lakh": "લાખ",
+    "crore": "કરોડ",
+    "perAnnum": "દર વર્ષે",
+    "monthly": "માસિક",
+    "yearly": "વાર્ષિક",
+    "total": "કુલ",
+    "invested": "રોકાણ",
+    "returns": "વળતર",
+    "maturity": "પરિપક્વતા",
+    "disclaimer": "આ કેલ્ક્યુલેટર માત્ર શૈક્ષણિક હેતુઓ માટે છે. રોકાણના નિર્ણયો માટે નાણાકીય સલાહકારની સલાહ લો."
+  },
+  "ppf": {
+    "title": "PPF કેલ્ક્યુલેટર 2025-26",
+    "metaTitle": "PPF કેલ્ક્યુલેટર 2025-26 - PPF પરિપક્વતા રકમ ગણો | FinCalc India",
+    "metaDescription": "તમારી PPF પરિપક્વતા રકમ, વ્યાજની આવક અને વર્ષવાર વૃદ્ધિની ગણતરી કરો.",
+    "yearlyDeposit": "વાર્ષિક જમા",
+    "tenure": "અવધિ (વર્ષો)",
+    "currentRate": "વર્તમાન PPF દર",
+    "maturityAmount": "પરિપક્વતા રકમ",
+    "totalInterest": "કુલ વ્યાજની આવક",
+    "totalInvested": "કુલ રોકાણ રકમ",
+    "minDeposit": "ન્યૂનતમ: ₹500",
+    "maxDeposit": "મહત્તમ: ₹1,50,000",
+    "lockIn": "15 વર્ષનો લોક-ઇન સમયગાળો",
+    "taxFree": "કર-મુક્ત વળતર"
+  },
+  "seo": {
+    "siteName": "FinCalc India",
+    "siteDescription": "PPF, FD, SIP, ટેક્સ, EMI અને વધુ માટે ભારતના સૌથી ઝડપી નાણાકીય કેલ્ક્યુલેટર.",
+    "keywords": "નાણાકીય કેલ્ક્યુલેટર, PPF કેલ્ક્યુલેટર, FD કેલ્ક્યુલેટર, SIP કેલ્ક્યુલેટર, ટેક્સ કેલ્ક્યુલેટર, EMI કેલ્ક્યુલેટર, ભારત, રોકાણ, વળતર"
+  }
+}

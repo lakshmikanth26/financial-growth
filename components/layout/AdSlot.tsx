@@ -61,11 +61,11 @@ export function HeaderAdSlot() {
 
 export function SidebarAdSlot() {
   return (
-    <div className="sticky top-4">
+    <div className="mb-6">
       <AdSlot 
         slot="sidebar-rectangle" 
         format="rectangle"
-        style={{ width: '300px', height: '600px' }}
+        style={{ width: '300px', height: '250px' }}
       />
     </div>
   );
