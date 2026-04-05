@@ -57,7 +57,7 @@ export default function RDCalculatorPage() {
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Input Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-2">
                 <button
@@ -65,7 +65,7 @@ export default function RDCalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'calculate'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Calculator className="h-4 w-4 inline mr-2" />
@@ -76,7 +76,7 @@ export default function RDCalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'target'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Target className="h-4 w-4 inline mr-2" />
@@ -87,14 +87,14 @@ export default function RDCalculatorPage() {
 
             {mode === 'target' && (
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Target Amount (₹)
                 </label>
                 <input
                   type="number"
                   value={targetAmount}
                   onChange={(e) => setTargetAmount(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter target amount"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function RDCalculatorPage() {
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Monthly Deposit (₹)
                 </label>
                 <input
@@ -110,13 +110,13 @@ export default function RDCalculatorPage() {
                   value={input.monthlyDeposit}
                   onChange={(e) => setInput({ ...input, monthlyDeposit: Number(e.target.value) })}
                   disabled={mode === 'target'}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
                   placeholder="Enter monthly deposit"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Annual Interest Rate (%)
                 </label>
                 <input
@@ -124,32 +124,32 @@ export default function RDCalculatorPage() {
                   step="0.1"
                   value={input.interestRate}
                   onChange={(e) => setInput({ ...input, interestRate: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter interest rate"
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Tenure (Months)
                   </label>
                   <input
                     type="number"
                     value={input.tenure}
                     onChange={(e) => setInput({ ...input, tenure: Number(e.target.value) })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter tenure in months"
                   />
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Compounding Frequency
                   </label>
                   <select
                     value={input.compoundingFrequency}
                     onChange={(e) => setInput({ ...input, compoundingFrequency: e.target.value as 'monthly' | 'quarterly' | 'annually' })}
-                    className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                    className="w-full px-4 py-3 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white dark:bg-slate-800"
                   >
                     <option value="monthly">Monthly</option>
                     <option value="quarterly">Quarterly</option>
@@ -167,12 +167,12 @@ export default function RDCalculatorPage() {
           </div>
 
           {/* Bank Rates */}
-          <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">Current RD Rates from Major Banks</h3>
+          <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Current RD Rates from Major Banks</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {Object.entries(bankRates).map(([key, bank]) => (
                 <div key={key} className="p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
-                  <div className="font-medium text-gray-900">{bank.bank}</div>
+                  <div className="font-medium text-gray-900 dark:text-gray-100">{bank.bank}</div>
                   <div className="text-2xl font-bold text-blue-600">{bank.rate}%</div>
                   <button
                     onClick={() => setInput({ ...input, interestRate: bank.rate })}
@@ -203,20 +203,20 @@ export default function RDCalculatorPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Total Deposited</p>
-                <p className="text-lg font-bold text-gray-900">{formatCurrency(result.totalDeposited)}</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Total Deposited</p>
+                <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{formatCurrency(result.totalDeposited)}</p>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Interest Earned</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Interest Earned</p>
                 <p className="text-lg font-bold text-green-600">{formatCurrency(result.totalInterest)}</p>
               </div>
             </div>
           </div>
 
           {/* Investment Breakdown Chart */}
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Investment Breakdown</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Investment Breakdown</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -241,8 +241,8 @@ export default function RDCalculatorPage() {
       </div>
 
       {/* Growth Chart */}
-      <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Year-wise Growth</h3>
+      <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Year-wise Growth</h3>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={result.yearlyBreakdown}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -273,28 +273,28 @@ export default function RDCalculatorPage() {
 
       {/* RD Benefits */}
       <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Why Choose Recurring Deposits?</h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Why Choose Recurring Deposits?</h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <PiggyBank className="h-6 w-6 text-blue-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Disciplined Savings</h4>
-            <p className="text-gray-600 text-sm">Build a habit of regular monthly savings with guaranteed returns</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Disciplined Savings</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Build a habit of regular monthly savings with guaranteed returns</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="h-6 w-6 text-green-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Higher Returns than Savings</h4>
-            <p className="text-gray-600 text-sm">Earn better interest rates compared to regular savings accounts</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Higher Returns than Savings</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Earn better interest rates compared to regular savings accounts</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <IndianRupee className="h-6 w-6 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Flexible Tenure</h4>
-            <p className="text-gray-600 text-sm">Choose tenure from 6 months to 10 years based on your goals</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Flexible Tenure</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Choose tenure from 6 months to 10 years based on your goals</p>
           </div>
         </div>
       </div>

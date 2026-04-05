@@ -53,14 +53,14 @@ export function CalculatorLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="font-display text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="font-display text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             {title}
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6">
             {description}
           </p>
           
@@ -87,8 +87,8 @@ export function CalculatorLayout({
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="font-display text-xl font-semibold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+              <h2 className="font-display text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 Calculator
               </h2>
@@ -100,8 +100,8 @@ export function CalculatorLayout({
 
             {/* Result */}
             {result && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="font-display text-xl font-semibold text-gray-900 mb-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <h2 className="font-display text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   Results
                 </h2>
                 {result}
@@ -110,8 +110,8 @@ export function CalculatorLayout({
 
             {/* Chart */}
             {chart && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="font-display text-xl font-semibold text-gray-900 mb-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <h2 className="font-display text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   Visual Breakdown
                 </h2>
                 {chart}
@@ -120,8 +120,8 @@ export function CalculatorLayout({
 
             {/* FAQ */}
             {faq && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="font-display text-xl font-semibold text-gray-900 mb-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <h2 className="font-display text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   Frequently Asked Questions
                 </h2>
                 {faq}
@@ -130,8 +130,8 @@ export function CalculatorLayout({
 
             {/* Related Calculators */}
             {relatedCalculators.length > 0 && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="font-display text-xl font-semibold text-gray-900 mb-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <h2 className="font-display text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   Related Calculators
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -139,10 +139,10 @@ export function CalculatorLayout({
                     <a
                       key={calc.name}
                       href={calc.href}
-                      className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors"
+                      className="flex items-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors"
                     >
                       <span className="text-2xl mr-3">{calc.icon}</span>
-                      <span className="font-medium text-gray-900">{calc.name}</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">{calc.name}</span>
                     </a>
                   ))}
                 </div>

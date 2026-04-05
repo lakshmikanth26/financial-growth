@@ -80,20 +80,20 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
   ] : [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       <HeaderAdSlot />
       
       {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200">
+      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/en" className="text-gray-600 hover:text-gray-900">
+              <Link href="/en" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-gray-100">
                 <ArrowLeft className="h-6 w-6" />
               </Link>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Income Tax Calculator 2025-26</h1>
-                <p className="text-gray-600">Compare New vs Old tax regime and find which saves you more</p>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Income Tax Calculator 2025-26</h1>
+                <p className="text-gray-600 dark:text-gray-400">Compare New vs Old tax regime and find which saves you more</p>
               </div>
             </div>
             <div className="flex space-x-2">
@@ -111,18 +111,18 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 Tax Calculator
               </h2>
               
               {/* Basic Information */}
               <div className="space-y-6">
-                <h3 className="font-semibold text-lg text-gray-900">Basic Information</h3>
+                <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Basic Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Annual Income</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Annual Income</label>
                     <div className="relative">
                       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
                       <input
@@ -130,17 +130,17 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         min="0"
                         value={inputs.annualIncome}
                         onChange={(e) => setInputs({...inputs, annualIncome: Number(e.target.value)})}
-                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Age Category</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Age Category</label>
                     <select
                       value={inputs.age}
                       onChange={(e) => setInputs({...inputs, age: e.target.value as any})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="below60">Below 60 years</option>
                       <option value="senior">Senior Citizen (60-80 years)</option>
@@ -152,16 +152,16 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
 
               {/* Old Regime Deductions */}
               <div className="space-y-6 mt-8">
-                <h3 className="font-semibold text-lg text-gray-900">
+                <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">
                   Old Regime Deductions
-                  <span className="text-sm font-normal text-gray-600 ml-2">
+                  <span className="text-sm font-normal text-gray-600 dark:text-gray-400 ml-2">
                     (Not applicable for New Regime)
                   </span>
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Section 80C (Max: ₹1.5L)
                     </label>
                     <div className="relative">
@@ -172,14 +172,14 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         max="150000"
                         value={inputs.section80C}
                         onChange={(e) => setInputs({...inputs, section80C: Number(e.target.value)})}
-                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                     <p className="text-xs text-gray-500 mt-1">PPF, ELSS, EPF, Life Insurance, etc.</p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Section 80D (Health Insurance)
                     </label>
                     <div className="relative">
@@ -189,14 +189,14 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         min="0"
                         value={inputs.section80D}
                         onChange={(e) => setInputs({...inputs, section80D: Number(e.target.value)})}
-                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                     <p className="text-xs text-gray-500 mt-1">Max: ₹25K (₹50K for senior citizens)</p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">HRA Exemption</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">HRA Exemption</label>
                     <div className="flex space-x-2">
                       <div className="relative flex-1">
                         <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
@@ -205,7 +205,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                           min="0"
                           value={inputs.hraExemption}
                           onChange={(e) => setInputs({...inputs, hraExemption: Number(e.target.value)})}
-                          className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                       </div>
                       <button
@@ -218,7 +218,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Home Loan Interest (Max: ₹2L)
                     </label>
                     <div className="relative">
@@ -229,7 +229,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                         max="200000"
                         value={inputs.homeLoanInterest}
                         onChange={(e) => setInputs({...inputs, homeLoanInterest: Number(e.target.value)})}
-                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -241,8 +241,8 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
             
             {/* Results */}
             {comparison && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-6">Tax Comparison Results</h2>
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Tax Comparison Results</h2>
                 
                 {/* Recommendation */}
                 <div className={`border rounded-xl p-6 text-center mb-6 ${
@@ -273,23 +273,23 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                     </h3>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Gross Income:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Gross Income:</span>
                         <span className="font-medium">{formatCurrency(comparison.newRegime.grossIncome)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Taxable Income:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Taxable Income:</span>
                         <span className="font-medium">{formatCurrency(comparison.newRegime.taxableIncome)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Tax Before Rebate:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Tax Before Rebate:</span>
                         <span className="font-medium">{formatCurrency(comparison.newRegime.taxBeforeRebate)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Rebate (87A):</span>
+                        <span className="text-gray-600 dark:text-gray-400">Rebate (87A):</span>
                         <span className="font-medium text-green-600">-{formatCurrency(comparison.newRegime.rebateAmount)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Cess (4%):</span>
+                        <span className="text-gray-600 dark:text-gray-400">Cess (4%):</span>
                         <span className="font-medium">{formatCurrency(comparison.newRegime.cess)}</span>
                       </div>
                       <hr className="border-green-200" />
@@ -312,23 +312,23 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
                     </h3>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Gross Income:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Gross Income:</span>
                         <span className="font-medium">{formatCurrency(comparison.oldRegime.grossIncome)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Taxable Income:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Taxable Income:</span>
                         <span className="font-medium">{formatCurrency(comparison.oldRegime.taxableIncome)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Tax Before Rebate:</span>
+                        <span className="text-gray-600 dark:text-gray-400">Tax Before Rebate:</span>
                         <span className="font-medium">{formatCurrency(comparison.oldRegime.taxBeforeRebate)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Rebate (87A):</span>
+                        <span className="text-gray-600 dark:text-gray-400">Rebate (87A):</span>
                         <span className="font-medium text-green-600">-{formatCurrency(comparison.oldRegime.rebateAmount)}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Cess (4%):</span>
+                        <span className="text-gray-600 dark:text-gray-400">Cess (4%):</span>
                         <span className="font-medium">{formatCurrency(comparison.oldRegime.cess)}</span>
                       </div>
                       <hr className="border-blue-200" />
@@ -348,13 +348,13 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
 
             {/* Charts */}
             {comparison && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-6">Visual Comparison</h2>
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Visual Comparison</h2>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Comparison Chart */}
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-4">Tax Comparison</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-4">Tax Comparison</h3>
                     <ResponsiveContainer width="100%" height={300}>
                       <BarChart data={comparisonData}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -370,12 +370,12 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
 
                   {/* 80C Investment Options */}
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-4">Section 80C Investment Options</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-4">Section 80C Investment Options</h3>
                     <div className="space-y-2 max-h-72 overflow-y-auto">
                       {investments80C.slice(0, 6).map((investment) => (
                         <div key={investment.name} className="border border-gray-200 rounded-lg p-3">
-                          <h4 className="font-medium text-gray-900 text-sm">{investment.name}</h4>
-                          <p className="text-xs text-gray-600 mb-1">{investment.description}</p>
+                          <h4 className="font-medium text-gray-900 dark:text-gray-100 text-sm">{investment.name}</h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">{investment.description}</p>
                           <p className="text-xs font-medium text-blue-600">Max: {formatCurrency(investment.limit)}</p>
                         </div>
                       ))}
@@ -402,16 +402,16 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
               </div>
 
               {/* Related Calculators */}
-              <div className="bg-white border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Related Calculators</h3>
+              <div className="bg-white dark:bg-slate-800 border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Related Calculators</h3>
                 <div className="space-y-3">
                   <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
                     <span className="text-2xl mr-3">🏛️</span>
-                    <span className="font-medium text-gray-900">PPF Calculator</span>
+                    <span className="font-medium text-gray-900 dark:text-gray-100">PPF Calculator</span>
                   </Link>
                   <Link href="/en/calculators/fd" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
                     <span className="text-2xl mr-3">🏦</span>
-                    <span className="font-medium text-gray-900">FD Calculator</span>
+                    <span className="font-medium text-gray-900 dark:text-gray-100">FD Calculator</span>
                   </Link>
                 </div>
               </div>
@@ -422,37 +422,37 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
 
       {/* HRA Calculator Modal */}
       <div id="hra-modal" className="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-xl p-6 max-w-md w-full mx-4">
+        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 max-w-md w-full mx-4">
           <h3 className="font-semibold text-lg mb-4">HRA Exemption Calculator</h3>
           
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Basic Salary</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Basic Salary</label>
               <input
                 type="number"
                 value={hraDetails.basicSalary}
                 onChange={(e) => setHraDetails({...hraDetails, basicSalary: Number(e.target.value)})}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">HRA Received</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">HRA Received</label>
               <input
                 type="number"
                 value={hraDetails.hraReceived}
                 onChange={(e) => setHraDetails({...hraDetails, hraReceived: Number(e.target.value)})}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Rent Paid</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rent Paid</label>
               <input
                 type="number"
                 value={hraDetails.rentPaid}
                 onChange={(e) => setHraDetails({...hraDetails, rentPaid: Number(e.target.value)})}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg"
               />
             </div>
             
@@ -476,7 +476,7 @@ export default function TaxCalculatorPage({ params }: { params: Promise<{ locale
             </button>
             <button
               onClick={() => document.getElementById('hra-modal')?.classList.add('hidden')}
-              className="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400"
+              className="flex-1 bg-gray-300 text-gray-700 dark:text-gray-300 py-2 rounded-lg hover:bg-gray-400"
             >
               Cancel
             </button>

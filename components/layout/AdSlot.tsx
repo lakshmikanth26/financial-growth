@@ -25,7 +25,7 @@ export function AdSlot({ slot, format = 'auto', style, className }: AdSlotProps)
   if (process.env.NODE_ENV === 'development') {
     return (
       <div 
-        className={`ad-placeholder h-24 ${className || ''}`}
+        className={`ad-placeholder h-24 bg-gray-100 dark:bg-slate-700 border border-gray-300 dark:border-gray-600 rounded flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm ${className || ''}`}
         style={style}
       >
         Ad Slot — {slot}
@@ -86,7 +86,7 @@ export function InContentAdSlot() {
 
 export function FooterAdSlot() {
   return (
-    <div className="w-full flex justify-center py-4 bg-gray-50">
+    <div className="w-full flex justify-center py-4 bg-gray-50 dark:bg-slate-800">
       <AdSlot 
         slot="footer-banner" 
         format="horizontal"

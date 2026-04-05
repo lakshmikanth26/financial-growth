@@ -68,7 +68,7 @@ export default function HRACalculatorPage() {
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Input Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-2">
                 <button
@@ -76,7 +76,7 @@ export default function HRACalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     calculationType === 'monthly'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Calculator className="h-4 w-4 inline mr-2" />
@@ -87,7 +87,7 @@ export default function HRACalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     calculationType === 'annual'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Building className="h-4 w-4 inline mr-2" />
@@ -98,52 +98,52 @@ export default function HRACalculatorPage() {
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Basic Salary (₹) - {calculationType}
                 </label>
                 <input
                   type="number"
                   value={input.basicSalary}
                   onChange={(e) => setInput({ ...input, basicSalary: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter basic salary"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   HRA Received (₹) - {calculationType}
                 </label>
                 <input
                   type="number"
                   value={input.hraReceived}
                   onChange={(e) => setInput({ ...input, hraReceived: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter HRA received"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Rent Paid (₹) - {calculationType}
                 </label>
                 <input
                   type="number"
                   value={input.rentPaid}
                   onChange={(e) => setInput({ ...input, rentPaid: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter rent paid"
                 />
               </div>
 
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   City Type
                 </label>
                 <select
                   value={input.city}
                   onChange={(e) => setInput({ ...input, city: e.target.value as 'metro' | 'non-metro' })}
-                  className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                  className="w-full px-4 py-3 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white dark:bg-slate-800"
                 >
                   <option value="metro">Metro City (50% exemption)</option>
                   <option value="non-metro">Non-Metro City (40% exemption)</option>
@@ -163,7 +163,7 @@ export default function HRACalculatorPage() {
             <h3 className="text-lg font-semibold text-blue-900 mb-4">Metro Cities (50% exemption)</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {metroCities.map((city) => (
-                <div key={city} className="text-sm text-blue-800 bg-white px-3 py-1 rounded-lg">
+                <div key={city} className="text-sm text-blue-800 bg-white dark:bg-slate-800 px-3 py-1 rounded-lg">
                   {city}
                 </div>
               ))}
@@ -202,8 +202,8 @@ export default function HRACalculatorPage() {
           </div>
 
           {/* HRA Breakdown Chart */}
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">HRA Breakdown</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">HRA Breakdown</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -228,9 +228,9 @@ export default function HRACalculatorPage() {
       </div>
 
       {/* Exemption Calculation Chart */}
-      <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">HRA Exemption Calculation</h3>
-        <p className="text-gray-600 mb-6">
+      <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">HRA Exemption Calculation</h3>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
           HRA exemption is the <strong>minimum</strong> of the following three amounts:
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -252,11 +252,11 @@ export default function HRACalculatorPage() {
 
       {/* HRA Rules */}
       <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">HRA Exemption Rules</h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">HRA Exemption Rules</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">Conditions for HRA Exemption</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Conditions for HRA Exemption</h4>
+            <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
                 You must be paying rent for accommodation
@@ -276,8 +276,8 @@ export default function HRACalculatorPage() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">Required Documents</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Required Documents</h4>
+            <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
                 Rent receipts or rental agreement

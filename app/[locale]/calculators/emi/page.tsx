@@ -52,7 +52,7 @@ export default function EMICalculatorPage() {
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Input Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-2">
                 <button
@@ -60,7 +60,7 @@ export default function EMICalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'calculate'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Calculator className="h-4 w-4 inline mr-2" />
@@ -71,7 +71,7 @@ export default function EMICalculatorPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     mode === 'affordability'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                   }`}
                 >
                   <Target className="h-4 w-4 inline mr-2" />
@@ -82,38 +82,38 @@ export default function EMICalculatorPage() {
 
             {mode === 'affordability' && (
               <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-4">Income Details</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Income Details</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Monthly Income (₹)
                     </label>
                     <input
                       type="number"
                       value={monthlyIncome}
                       onChange={(e) => setMonthlyIncome(Number(e.target.value))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Enter monthly income"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Existing EMIs (₹)
                     </label>
                     <input
                       type="number"
                       value={existingEMIs}
                       onChange={(e) => setExistingEMIs(Number(e.target.value))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Enter existing EMIs"
                     />
                   </div>
                 </div>
-                <div className="mt-4 p-3 bg-white rounded-lg border">
-                  <p className="text-sm text-gray-600">
+                <div className="mt-4 p-3 bg-white dark:bg-slate-800 rounded-lg border">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     <strong>Affordable EMI:</strong> {formatCurrency(affordableEMI)} (50% of income)
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     <strong>Max Loan Amount:</strong> {formatCurrency(maxLoanAmount)}
                   </p>
                 </div>
@@ -122,20 +122,20 @@ export default function EMICalculatorPage() {
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Loan Amount (₹)
                 </label>
                 <input
                   type="number"
                   value={input.loanAmount}
                   onChange={(e) => setInput({ ...input, loanAmount: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter loan amount"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Interest Rate (% per annum)
                 </label>
                 <input
@@ -143,32 +143,32 @@ export default function EMICalculatorPage() {
                   step="0.1"
                   value={input.interestRate}
                   onChange={(e) => setInput({ ...input, interestRate: Number(e.target.value) })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter interest rate"
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Loan Tenure
                   </label>
                   <input
                     type="number"
                     value={input.loanTenure}
                     onChange={(e) => setInput({ ...input, loanTenure: Number(e.target.value) })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter tenure"
                   />
                 </div>
                 <div className="relative">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Tenure Type
                   </label>
                   <select
                     value={input.tenureType}
                     onChange={(e) => setInput({ ...input, tenureType: e.target.value as 'years' | 'months' })}
-                    className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                    className="w-full px-4 py-3 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white dark:bg-slate-800"
                   >
                     <option value="years">Years</option>
                     <option value="months">Months</option>
@@ -203,20 +203,20 @@ export default function EMICalculatorPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Total Amount</p>
-                <p className="text-lg font-bold text-gray-900">{formatCurrency(result.totalAmount)}</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Total Amount</p>
+                <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{formatCurrency(result.totalAmount)}</p>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Total Interest</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Total Interest</p>
                 <p className="text-lg font-bold text-red-600">{formatCurrency(result.totalInterest)}</p>
               </div>
             </div>
           </div>
 
           {/* Principal vs Interest Chart */}
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Loan Breakdown</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Loan Breakdown</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -241,8 +241,8 @@ export default function EMICalculatorPage() {
       </div>
 
       {/* Payment Schedule Chart */}
-      <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Year-wise Payment Breakdown</h3>
+      <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Year-wise Payment Breakdown</h3>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={result.yearlyBreakdown}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -271,28 +271,28 @@ export default function EMICalculatorPage() {
 
       {/* Loan Types */}
       <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Popular Loan Types</h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Popular Loan Types</h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Home className="h-6 w-6 text-blue-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Home Loan</h4>
-            <p className="text-gray-600 text-sm">7.5% - 9.5% interest rate<br/>Up to 30 years tenure</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Home Loan</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">7.5% - 9.5% interest rate<br/>Up to 30 years tenure</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingDown className="h-6 w-6 text-green-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Car Loan</h4>
-            <p className="text-gray-600 text-sm">8.5% - 11% interest rate<br/>Up to 7 years tenure</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Car Loan</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">8.5% - 11% interest rate<br/>Up to 7 years tenure</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Calculator className="h-6 w-6 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Personal Loan</h4>
-            <p className="text-gray-600 text-sm">10% - 18% interest rate<br/>Up to 5 years tenure</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Personal Loan</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">10% - 18% interest rate<br/>Up to 5 years tenure</p>
           </div>
         </div>
       </div>

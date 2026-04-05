@@ -48,20 +48,20 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       <HeaderAdSlot />
       
       {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200">
+      <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/en" className="text-gray-600 hover:text-gray-900">
+              <Link href="/en" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-gray-100">
                 <ArrowLeft className="h-6 w-6" />
               </Link>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Fixed Deposit Calculator 2025-26</h1>
-                <p className="text-gray-600">Calculate FD maturity amount with compound interest</p>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Fixed Deposit Calculator 2025-26</h1>
+                <p className="text-gray-600 dark:text-gray-400">Calculate FD maturity amount with compound interest</p>
               </div>
             </div>
             <div className="flex space-x-2">
@@ -79,8 +79,8 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Calculator Input */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
                 <Calculator className="h-5 w-5 mr-2 text-blue-600" />
                 FD Calculator
               </h2>
@@ -88,7 +88,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
               {/* Basic Inputs */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Principal Amount</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Principal Amount</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
                     <input
@@ -96,13 +96,13 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                       min="1000"
                       value={inputs.principal}
                       onChange={(e) => setInputs({...inputs, principal: Number(e.target.value)})}
-                      className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full pl-8 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Interest Rate</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Interest Rate</label>
                   <div className="relative">
                     <input
                       type="number"
@@ -111,26 +111,26 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                       step="0.25"
                       value={inputs.interestRate}
                       onChange={(e) => setInputs({...inputs, interestRate: Number(e.target.value)})}
-                      className="w-full px-4 pr-8 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 pr-8 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Tenure</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tenure</label>
                   <div className="flex space-x-2">
                     <input
                       type="number"
                       min="1"
                       value={inputs.tenure}
                       onChange={(e) => setInputs({...inputs, tenure: Number(e.target.value)})}
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <select
                       value={inputs.tenureUnit}
                       onChange={(e) => setInputs({...inputs, tenureUnit: e.target.value as any})}
-                      className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="days">Days</option>
                       <option value="months">Months</option>
@@ -140,11 +140,11 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                 </div>
 
                 <div className="relative">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Compounding Frequency</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Compounding Frequency</label>
                   <select
                     value={inputs.compoundingFrequency}
                     onChange={(e) => setInputs({...inputs, compoundingFrequency: e.target.value as any})}
-                    className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                    className="w-full px-4 py-3 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white dark:bg-slate-800"
                   >
                     <option value="monthly">Monthly</option>
                     <option value="quarterly">Quarterly</option>
@@ -161,9 +161,9 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
 
               {/* Interest Payout Options */}
               <div className="space-y-4">
-                <label className="block text-sm font-medium text-gray-700">Interest Payout</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Interest Payout</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50">
                     <input
                       type="radio"
                       name="interestPayout"
@@ -174,11 +174,11 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                     />
                     <div>
                       <div className="font-medium">Cumulative (Reinvest)</div>
-                      <div className="text-sm text-gray-600">Interest compounded and paid at maturity</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Interest compounded and paid at maturity</div>
                     </div>
                   </label>
                   
-                  <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                  <label className="flex items-center p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50">
                     <input
                       type="radio"
                       name="interestPayout"
@@ -189,7 +189,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                     />
                     <div>
                       <div className="font-medium">Non-Cumulative (Payout)</div>
-                      <div className="text-sm text-gray-600">Interest paid out periodically</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Interest paid out periodically</div>
                     </div>
                   </label>
                 </div>
@@ -204,7 +204,7 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
                     onChange={(e) => setIsSeniorCitizen(e.target.checked)}
                     className="mr-2"
                   />
-                  <span className="text-sm text-gray-700">Senior Citizen (60+ years)</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Senior Citizen (60+ years)</span>
                 </label>
                 
                 <button
@@ -220,8 +220,8 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
             
             {/* Results */}
             {result && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-6">Results</h2>
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Results</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
@@ -273,35 +273,35 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
 
             {/* Bank Rate Comparison */}
             {showBankComparison && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Bank Rate Comparison (Latest Rates)</h3>
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Bank Rate Comparison (Latest Rates)</h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse border border-gray-300">
+                  <table className="w-full border-collapse border border-gray-300 dark:border-gray-600">
                     <thead>
                       <tr className="bg-gray-50">
-                        <th className="border border-gray-300 px-4 py-2 text-left">Bank</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">1 Year</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">2 Years</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">3 Years</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">5 Years</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">Senior Citizen Bonus</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">Bank</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">1 Year</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">2 Years</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">3 Years</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">5 Years</th>
+                        <th className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">Senior Citizen Bonus</th>
                       </tr>
                     </thead>
                     <tbody>
                       {bankRates.map((bank) => (
                         <tr key={bank.bankName} className="hover:bg-gray-50">
-                          <td className="border border-gray-300 px-4 py-2 font-medium">{bank.bankName}</td>
-                          <td className="border border-gray-300 px-4 py-2 text-center">{bank.rate1Year}%</td>
-                          <td className="border border-gray-300 px-4 py-2 text-center">{bank.rate2Year}%</td>
-                          <td className="border border-gray-300 px-4 py-2 text-center">{bank.rate3Year}%</td>
-                          <td className="border border-gray-300 px-4 py-2 text-center">{bank.rate5Year}%</td>
-                          <td className="border border-gray-300 px-4 py-2 text-center">+{bank.seniorCitizenBonus}%</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 font-medium">{bank.bankName}</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate1Year}%</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate2Year}%</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate3Year}%</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">{bank.rate5Year}%</td>
+                          <td className="border border-gray-300 dark:border-gray-600 px-4 py-2 text-center">+{bank.seniorCitizenBonus}%</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <p className="text-sm text-gray-600 mt-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                   * Rates are indicative and may vary. Please check with respective banks for current rates.
                 </p>
               </div>
@@ -324,16 +324,16 @@ export default function FDCalculatorPage({ params }: { params: Promise<{ locale:
               </div>
 
               {/* Related Calculators */}
-              <div className="bg-white border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Related Calculators</h3>
+              <div className="bg-white dark:bg-slate-800 border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Related Calculators</h3>
                 <div className="space-y-3">
                   <Link href="/en/calculators/ppf" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
                     <span className="text-2xl mr-3">🏛️</span>
-                    <span className="font-medium text-gray-900">PPF Calculator</span>
+                    <span className="font-medium text-gray-900 dark:text-gray-100">PPF Calculator</span>
                   </Link>
                   <Link href="/en/calculators/rd" className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-colors">
                     <span className="text-2xl mr-3">💰</span>
-                    <span className="font-medium text-gray-900">RD Calculator</span>
+                    <span className="font-medium text-gray-900 dark:text-gray-100">RD Calculator</span>
                   </Link>
                 </div>
               </div>

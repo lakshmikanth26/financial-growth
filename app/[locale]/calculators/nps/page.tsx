@@ -56,7 +56,7 @@ export default function NPSCalculatorPage() {
     >
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Input Form */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
           <div className="flex items-center space-x-4 mb-6">
             <div className="flex items-center space-x-2">
               <button
@@ -64,7 +64,7 @@ export default function NPSCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'calculate'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                 }`}
               >
                 <Calculator className="h-4 w-4 inline mr-2" />
@@ -75,7 +75,7 @@ export default function NPSCalculatorPage() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   mode === 'target'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-gray-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
                 }`}
               >
                 <Target className="h-4 w-4 inline mr-2" />
@@ -86,14 +86,14 @@ export default function NPSCalculatorPage() {
 
           {mode === 'target' && (
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Target Corpus (₹)
               </label>
               <input
                 type="number"
                 value={targetCorpus}
                 onChange={(e) => setTargetCorpus(Number(e.target.value))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter target corpus"
               />
             </div>
@@ -101,14 +101,14 @@ export default function NPSCalculatorPage() {
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Current Age
               </label>
               <input
                 type="number"
                 value={input.currentAge}
                 onChange={(e) => setInput({ ...input, currentAge: Number(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter current age"
                 min="18"
                 max="65"
@@ -116,14 +116,14 @@ export default function NPSCalculatorPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Retirement Age
               </label>
               <input
                 type="number"
                 value={input.retirementAge}
                 onChange={(e) => setInput({ ...input, retirementAge: Number(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter retirement age"
                 min="60"
                 max="75"
@@ -134,7 +134,7 @@ export default function NPSCalculatorPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Monthly Contribution (₹)
               </label>
               <input
@@ -142,13 +142,13 @@ export default function NPSCalculatorPage() {
                 value={input.monthlyContribution}
                 onChange={(e) => setInput({ ...input, monthlyContribution: Number(e.target.value) })}
                 disabled={mode === 'target'}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
                 placeholder="Enter monthly contribution"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Expected Annual Return (%)
               </label>
               <input
@@ -156,13 +156,13 @@ export default function NPSCalculatorPage() {
                 step="0.1"
                 value={input.expectedReturn}
                 onChange={(e) => setInput({ ...input, expectedReturn: Number(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter expected return"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Annuity Return (%)
               </label>
               <input
@@ -170,7 +170,7 @@ export default function NPSCalculatorPage() {
                 step="0.1"
                 value={input.annuityReturn || 6}
                 onChange={(e) => setInput({ ...input, annuityReturn: Number(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter annuity return"
               />
               <p className="text-sm text-gray-500 mt-1">
@@ -195,12 +195,12 @@ export default function NPSCalculatorPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Total Investment</p>
-                <p className="text-lg font-bold text-gray-900">{formatCurrency(result.totalInvestment)}</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Total Investment</p>
+                <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{formatCurrency(result.totalInvestment)}</p>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow-md border">
-                <p className="text-gray-600 text-sm font-medium">Total Returns</p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-md border">
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Total Returns</p>
                 <p className="text-lg font-bold text-green-600">{formatCurrency(result.totalReturns)}</p>
               </div>
             </div>
@@ -218,8 +218,8 @@ export default function NPSCalculatorPage() {
           </div>
 
           {/* Withdrawal Breakdown Chart */}
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Withdrawal Breakdown</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Withdrawal Breakdown</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -244,8 +244,8 @@ export default function NPSCalculatorPage() {
       </div>
 
       {/* Growth Chart */}
-      <div className="mt-8 bg-white rounded-2xl shadow-xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">Age-wise Growth</h3>
+      <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Age-wise Growth</h3>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={result.yearlyBreakdown}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -276,34 +276,34 @@ export default function NPSCalculatorPage() {
 
       {/* NPS Benefits */}
       <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">NPS Benefits</h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">NPS Benefits</h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <IndianRupee className="h-6 w-6 text-blue-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Tax Benefits</h4>
-            <p className="text-gray-600 text-sm">Additional ₹50,000 deduction under Section 80CCD(1B)</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Tax Benefits</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Additional ₹50,000 deduction under Section 80CCD(1B)</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Target className="h-6 w-6 text-green-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Retirement Planning</h4>
-            <p className="text-gray-600 text-sm">Systematic retirement corpus building with government backing</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Retirement Planning</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Systematic retirement corpus building with government backing</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <PiggyBank className="h-6 w-6 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Guaranteed Pension</h4>
-            <p className="text-gray-600 text-sm">40% corpus converted to annuity for lifelong pension</p>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Guaranteed Pension</h4>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">40% corpus converted to annuity for lifelong pension</p>
           </div>
         </div>
 
         <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-xl">
-          <h4 className="font-semibold text-gray-900 mb-2">Important Note:</h4>
-          <p className="text-gray-700 text-sm">
+          <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Important Note:</h4>
+          <p className="text-gray-700 dark:text-gray-300 text-sm">
             At retirement, 60% of the corpus can be withdrawn as lump sum (tax-free up to certain limits), 
             while 40% must be used to purchase an annuity for monthly pension. Early exit before 60 years 
             allows only 20% lump sum withdrawal.
