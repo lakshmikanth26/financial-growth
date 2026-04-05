@@ -46,6 +46,13 @@ export function Navbar() {
     { name: 'HRA Calculator', href: '/en/calculators/hra', icon: '🏠', description: 'House Rent Allowance' },
   ];
 
+  const upcomingFeatures = [
+    { name: 'Tax Tools', icon: '📊', description: 'Advanced tax planning tools' },
+    { name: 'Mutual Funds', icon: '📈', description: 'MF analysis & recommendations' },
+    { name: 'Govt Schemes', icon: '🏛️', description: 'Government schemes database' },
+    { name: 'News', icon: '📰', description: 'Latest financial news & updates' },
+  ];
+
   const navigation = [
     { name: 'Home', href: '/en' },
     { name: 'Blog', href: '/en/blog' },
@@ -100,6 +107,8 @@ export function Navbar() {
                     <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">Financial Calculators</h3>
                     <p className="text-xs text-gray-500 dark:text-gray-400">Choose from our comprehensive calculator suite</p>
                   </div>
+                  
+                  {/* Active Calculators */}
                   <div className="py-2">
                     {calculators.map((calc) => (
                       <Link
@@ -115,6 +124,32 @@ export function Navbar() {
                         </div>
                       </Link>
                     ))}
+                  </div>
+
+                  {/* Upcoming Section */}
+                  <div className="border-t border-gray-100 dark:border-gray-600 pt-2">
+                    <div className="px-4 py-2">
+                      <h4 className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Coming Soon</h4>
+                    </div>
+                    <div className="py-1">
+                      {upcomingFeatures.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex items-center px-4 py-3 text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-60"
+                        >
+                          <span className="text-xl mr-4 grayscale">{feature.icon}</span>
+                          <div className="flex-1">
+                            <div className="font-medium flex items-center">
+                              {feature.name}
+                              <span className="ml-2 px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
+                                Soon
+                              </span>
+                            </div>
+                            <div className="text-xs text-gray-400 dark:text-gray-500">{feature.description}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -171,6 +206,31 @@ export function Navbar() {
                       </div>
                     </Link>
                   ))}
+                </div>
+
+                {/* Upcoming Features */}
+                <div className="mt-3 pt-3 border-t border-emerald-200 dark:border-emerald-700">
+                  <h4 className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 mb-2 uppercase tracking-wider">
+                    Coming Soon
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {upcomingFeatures.map((feature) => (
+                      <div
+                        key={feature.name}
+                        className="flex items-center text-gray-400 dark:text-gray-500 py-2 px-2 text-sm rounded-md cursor-not-allowed opacity-60"
+                      >
+                        <span className="text-base mr-2 grayscale">{feature.icon}</span>
+                        <div className="flex-1">
+                          <div className="font-medium text-xs flex items-center">
+                            {feature.name}
+                            <span className="ml-1 px-1 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded text-xs">
+                              Soon
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               
