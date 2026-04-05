@@ -84,8 +84,5 @@ module.exports = {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    additionalSitemaps: [
-      'https://bharathfin.vercel.app/sitemap.xml',
-    ],
   },
 }
