@@ -48,7 +48,6 @@ export default function SIPCalculatorPage() {
     <CalculatorLayout
       title="SIP Calculator"
       description="Calculate your Systematic Investment Plan returns and plan your wealth creation journey"
-      icon={<TrendingUp className="h-8 w-8 text-white" />}
     >
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Input Form */}
@@ -195,7 +194,7 @@ export default function SIPCalculatorPage() {
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                 >
                   {pieData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />

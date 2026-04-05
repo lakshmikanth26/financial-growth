@@ -46,7 +46,6 @@ export default function EMICalculatorPage() {
     <CalculatorLayout
       title="EMI Calculator"
       description="Calculate your Equated Monthly Installment for home loans, car loans, and personal loans"
-      icon={<Home className="h-8 w-8 text-white" />}
     >
       <HeaderAdSlot />
       
@@ -228,7 +227,7 @@ export default function EMICalculatorPage() {
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                 >
                   {pieData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />

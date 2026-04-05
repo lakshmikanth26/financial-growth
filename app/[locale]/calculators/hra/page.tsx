@@ -62,7 +62,6 @@ export default function HRACalculatorPage() {
     <CalculatorLayout
       title="HRA Calculator"
       description="Calculate your House Rent Allowance exemption and taxable HRA amount"
-      icon={<Home className="h-8 w-8 text-white" />}
     >
       <HeaderAdSlot />
       
@@ -215,7 +214,7 @@ export default function HRACalculatorPage() {
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                 >
                   {pieData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -272,7 +271,7 @@ export default function HRACalculatorPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-green-600 mr-2">✓</span>
-                You should not own the house you're living in
+                You should not own the house you&apos;re living in
               </li>
             </ul>
           </div>
@@ -285,7 +284,7 @@ export default function HRACalculatorPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                Landlord's PAN (if rent > ₹1 lakh/year)
+                Landlord&apos;s PAN (if rent &gt; ₹1 lakh/year)
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>

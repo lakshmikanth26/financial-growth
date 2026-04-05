@@ -53,7 +53,6 @@ export default function NPSCalculatorPage() {
     <CalculatorLayout
       title="NPS Calculator"
       description="Calculate your National Pension System corpus and retirement planning"
-      icon={<User className="h-8 w-8 text-white" />}
     >
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Input Form */}
@@ -231,7 +230,7 @@ export default function NPSCalculatorPage() {
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) => `${name}: ${((percent || 0) * 100).toFixed(0)}%`}
                 >
                   {pieData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
