@@ -2,6 +2,7 @@
 module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://bharathfin.vercel.app',
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
   exclude: ['/api/*', '/admin/*'],
   additionalPaths: async (config) => {
     const locales = ['en', 'hi', 'ta', 'te', 'kn', 'bn', 'mr', 'gu'];
