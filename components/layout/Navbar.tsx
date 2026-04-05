@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -128,10 +129,13 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+            
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 p-2"
