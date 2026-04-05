@@ -80,6 +80,9 @@ export default async function RootLayout({
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="dTcNZadOmzXRRqDMxDzqrNtJ2oDx5Jyb44BilGLeQzg" />
         
+        {/* Google AdSense Verification */}
+        <meta name="google-adsense-account" content="ca-pub-4395681760924667" />
+        
         {/* Always use dark theme */}
         <script
           dangerouslySetInnerHTML={{
