@@ -5,7 +5,7 @@ Disallow: /api/
 Disallow: /admin/
 
 # Host
-Host: https://bharatfin.in
+Host: https://bharathfin.vercel.app
 
 # Sitemaps
-Sitemap: https://bharatfin.in/sitemap.xml
+Sitemap: https://bharathfin.vercel.app/sitemap.xml

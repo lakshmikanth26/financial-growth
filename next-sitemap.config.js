@@ -1,39 +1,39 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://bharatfin.in',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://bharathfin.vercel.app',
   generateRobotsTxt: true,
   exclude: ['/api/*', '/admin/*'],
   alternateRefs: [
     {
-      href: 'https://bharatfin.in/en',
+      href: 'https://bharathfin.vercel.app/en',
       hreflang: 'en',
     },
     {
-      href: 'https://bharatfin.in/hi',
+      href: 'https://bharathfin.vercel.app/hi',
       hreflang: 'hi',
     },
     {
-      href: 'https://bharatfin.in/ta',
+      href: 'https://bharathfin.vercel.app/ta',
       hreflang: 'ta',
     },
     {
-      href: 'https://bharatfin.in/te',
+      href: 'https://bharathfin.vercel.app/te',
       hreflang: 'te',
     },
     {
-      href: 'https://bharatfin.in/kn',
+      href: 'https://bharathfin.vercel.app/kn',
       hreflang: 'kn',
     },
     {
-      href: 'https://bharatfin.in/bn',
+      href: 'https://bharathfin.vercel.app/bn',
       hreflang: 'bn',
     },
     {
-      href: 'https://bharatfin.in/mr',
+      href: 'https://bharathfin.vercel.app/mr',
       hreflang: 'mr',
     },
     {
-      href: 'https://bharatfin.in/gu',
+      href: 'https://bharathfin.vercel.app/gu',
       hreflang: 'gu',
     },
   ],
@@ -46,7 +46,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://bharatfin.in/sitemap.xml',
+      'https://bharathfin.vercel.app/sitemap.xml',
     ],
   },
 }
