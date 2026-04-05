@@ -3,6 +3,45 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://bharathfin.vercel.app',
   generateRobotsTxt: true,
   exclude: ['/api/*', '/admin/*'],
+  additionalPaths: async (config) => {
+    const locales = ['en', 'hi', 'ta', 'te', 'kn', 'bn', 'mr', 'gu'];
+    const calculatorPaths = [
+      '/calculators/ppf',
+      '/calculators/fd', 
+      '/calculators/sip',
+      '/calculators/nps',
+      '/calculators/emi',
+      '/calculators/rd',
+      '/calculators/hra',
+      '/tax/new-vs-old-regime'
+    ];
+    
+    const paths = [];
+    
+    // Add home page for each locale
+    locales.forEach(locale => {
+      paths.push({
+        loc: `/${locale}`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date().toISOString(),
+      });
+    });
+    
+    // Add calculator pages for each locale
+    locales.forEach(locale => {
+      calculatorPaths.forEach(path => {
+        paths.push({
+          loc: `/${locale}${path}`,
+          changefreq: 'weekly',
+          priority: 0.8,
+          lastmod: new Date().toISOString(),
+        });
+      });
+    });
+    
+    return paths;
+  },
   alternateRefs: [
     {
       href: 'https://bharathfin.vercel.app/en',
