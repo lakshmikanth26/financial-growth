@@ -48,6 +48,7 @@ export function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/en' },
+    { name: 'Blog', href: '/en/blog' },
     { name: 'Tax Tools', href: '/en/tax' },
     { name: 'Mutual Funds', href: '/en/mutual-funds' },
     { name: 'Govt Schemes', href: '/en/govt-schemes' },

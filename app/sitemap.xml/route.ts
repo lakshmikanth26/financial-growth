@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server'
+import { getAllBlogPosts } from '@/lib/blog/data'
+import { getAllBanks } from '@/lib/programmatic-seo/bank-data'
 
 export async function GET() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bharathfin.vercel.app'
@@ -15,6 +17,10 @@ export async function GET() {
     '/calculators/hra',
     '/tax/new-vs-old-regime'
   ]
+  
+  // Get blog posts and banks for programmatic SEO
+  const blogPosts = getAllBlogPosts()
+  const banks = getAllBanks()
 
   let urls = []
 
@@ -52,6 +58,40 @@ export async function GET() {
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>`)
+    })
+  })
+
+  // Blog listing pages for each locale
+  locales.forEach(locale => {
+    urls.push(`  <url>
+    <loc>${siteUrl}/${locale}/blog</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>`)
+  })
+
+  // Individual blog posts for each locale
+  locales.forEach(locale => {
+    blogPosts.forEach(post => {
+      urls.push(`  <url>
+    <loc>${siteUrl}/${locale}/blog/${post.slug}</loc>
+    <lastmod>${post.updatedAt}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`)
+    })
+  })
+
+  // Programmatic SEO pages: Bank FD rates for each locale
+  locales.forEach(locale => {
+    banks.forEach(bank => {
+      urls.push(`  <url>
+    <loc>${siteUrl}/${locale}/fd-interest-rate-${bank.bankSlug}</loc>
+    <lastmod>${bank.lastUpdated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>`)
     })
   })
