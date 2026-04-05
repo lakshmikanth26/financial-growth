@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://fincalc.in',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://bharatfin.in',
   generateRobotsTxt: true,
   exclude: ['/api/*', '/admin/*'],
   alternateRefs: [

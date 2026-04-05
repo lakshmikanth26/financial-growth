@@ -76,22 +76,22 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
     <div className="min-h-screen bg-gray-50">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-green-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="font-bold text-4xl lg:text-6xl text-gray-900 mb-6">
-              India's <span className="text-blue-600">Fastest</span><br />
-              Financial Calculators
+              <span className="text-emerald-600">Smart Money</span><br />
+              for Every Indian
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Calculate PPF, FD, SIP, Tax, EMI returns instantly. Make informed investment decisions 
-              with our free, accurate financial calculators designed for Indian investors.
+              Calculate. Plan. Grow. Make informed investment decisions 
+              with BharatFin's free, accurate financial calculators designed for Indian investors.
             </p>
             
             {/* Quick Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">15+</div>
+                <div className="text-3xl font-bold text-emerald-600">15+</div>
                 <div className="text-sm text-gray-600">Calculators</div>
               </div>
               <div className="text-center">
@@ -128,18 +128,18 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
               <Link
                 key={calc.name}
                 href={calc.href}
-                className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-blue-200 transition-all duration-200"
+                className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{calc.icon}</div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 mb-2">
+                    <h3 className="font-semibold text-lg text-gray-900 group-hover:text-emerald-600 mb-2">
                       {calc.name}
                     </h3>
                     <p className="text-gray-600 text-sm mb-3">
                       {calc.description}
                     </p>
-                    <div className="flex items-center text-blue-600 text-sm font-medium">
+                    <div className="flex items-center text-emerald-600 text-sm font-medium">
                       Calculate Now
                       <TrendingUp className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -166,8 +166,8 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature) => (
               <div key={feature.title} className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="h-8 w-8 text-blue-600" />
+                <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="h-8 w-8 text-emerald-600" />
                 </div>
                 <h3 className="font-semibold text-lg text-gray-900 mb-2">
                   {feature.title}
@@ -202,7 +202,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
                 key={lang.code}
                 href={`/${lang.code}/simple-page`}
                 className={`p-4 border rounded-lg hover:bg-gray-50 transition-colors ${
-                  locale === lang.code ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
+                  locale === lang.code ? 'border-emerald-500 bg-emerald-50' : 'border-gray-200'
                 }`}
               >
                 <div className="text-2xl mb-2">{lang.flag}</div>

@@ -1,0 +1,15 @@
+<svg width="480" height="112" viewBox="0 0 480 112" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="112" fill="#0F172A" rx="0"/>
+  <!-- Rising bars icon -->
+  <g transform="translate(16,16)">
+    <rect x="0" y="56" width="20" height="24" rx="5" fill="#00C896"/>
+    <rect x="28" y="36" width="20" height="44" rx="5" fill="#00A87C"/>
+    <rect x="56" y="12" width="20" height="68" rx="5" fill="#00C896"/>
+    <line x1="10" y1="56" x2="66" y2="12" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 5" opacity="0.5"/>
+    <circle cx="66" cy="9" r="6" fill="#00C896"/>
+    <circle cx="66" cy="9" r="3" fill="#0F172A"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="116" y="60" font-family="'Sora', 'Segoe UI', Arial, sans-serif" font-size="48" font-weight="700" fill="#FFFFFF" letter-spacing="-2">BharatFin</text>
+  <text x="118" y="90" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="500" fill="#00C896" letter-spacing="5">SMART MONEY INDIA</text>
+</svg>

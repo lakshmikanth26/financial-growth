@@ -27,14 +27,15 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/en" className="flex items-center space-x-2 mb-4">
-              <Calculator className="h-8 w-8 text-blue-400" />
-              <span className="font-display font-bold text-xl">
-                FinCalc <span className="text-blue-400">India</span>
-              </span>
+              <img 
+                src="/svg/bharatfin-logo-transparent-dark.svg" 
+                alt="BharatFin" 
+                className="h-8"
+              />
             </Link>
             <p className="text-gray-300 text-sm mb-4">
-              India's fastest financial calculators for smart investment decisions. 
-              Calculate returns, plan investments, and achieve your financial goals.
+              Smart Money for Every Indian. Calculate returns, plan investments, 
+              and achieve your financial goals with BharatFin's comprehensive calculators.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Shield className="h-4 w-4" />
@@ -120,7 +121,7 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © 2025 FinCalc India. All rights reserved. Made with ❤️ for Indian investors.
+              © 2025 BharatFin. All rights reserved. Made with ❤️ for Indian investors.
             </div>
             <div className="text-xs text-gray-500 text-center md:text-right max-w-md">
               <p className="mb-1">

@@ -1,6 +1,6 @@
-# FinCalc India 🇮🇳
+# BharatFin 🇮🇳
 
-India's fastest multilingual financial calculators for smart investment decisions. Built with Next.js 14, TypeScript, and Tailwind CSS.
+Smart Money for Every Indian. Comprehensive multilingual financial calculators for smart investment decisions. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 

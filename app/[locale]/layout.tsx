@@ -18,34 +18,39 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "FinCalc India - India's Fastest Financial Calculators",
+  title: "BharatFin - Smart Money for Every Indian",
   description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors with multilingual support.",
-  keywords: "financial calculator, PPF calculator, FD calculator, SIP calculator, tax calculator, EMI calculator, India, investment",
-  authors: [{ name: "FinCalc India" }],
-  creator: "FinCalc India",
-  publisher: "FinCalc India",
+  keywords: "financial calculator, PPF calculator, FD calculator, SIP calculator, tax calculator, EMI calculator, India, investment, BharatFin",
+  authors: [{ name: "BharatFin" }],
+  creator: "BharatFin",
+  publisher: "BharatFin",
   robots: "index, follow",
+  icons: {
+    icon: "/favicon/bharatfin-favicon.ico",
+    apple: "/favicon/bharatfin-favicon-180.png",
+    shortcut: "/favicon/bharatfin-favicon-32.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://fincalc.in",
-    siteName: "FinCalc India",
-    title: "FinCalc India - India's Fastest Financial Calculators",
+    url: "https://bharatfin.in",
+    siteName: "BharatFin",
+    title: "BharatFin - Smart Money for Every Indian",
     description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors.",
     images: [
       {
-        url: "/og/homepage.png",
+        url: "/png/bharatfin-og-image.png",
         width: 1200,
         height: 630,
-        alt: "FinCalc India - Financial Calculators",
+        alt: "BharatFin - Financial Calculators",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FinCalc India - India's Fastest Financial Calculators",
+    title: "BharatFin - Smart Money for Every Indian",
     description: "Calculate PPF, FD, SIP, Tax, EMI returns instantly. Free financial calculators for Indian investors.",
-    images: ["/og/homepage.png"],
+    images: ["/png/bharatfin-og-image.png"],
   },
   verification: {
     google: "your-google-verification-code",
