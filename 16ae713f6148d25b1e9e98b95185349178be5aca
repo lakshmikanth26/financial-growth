@@ -1,0 +1,45 @@
+app/[locale]/layout.tsx
+  78f222f2b4f65d3d 57,99-114
+app/[locale]/disclaimer/page.tsx
+  78f222f2b4f65d3d 1-188
+public/ads.txt
+  78f222f2b4f65d3d 1
+app/[locale]/about/page.tsx
+  78f222f2b4f65d3d 1-224
+lib/blog/data.ts
+  78f222f2b4f65d3d 5-289
+app/[locale]/page.tsx
+  78f222f2b4f65d3d 70,94
+components/layout/Footer.tsx
+  78f222f2b4f65d3d 4,8-10,12-17,21-25,34,70,74,77,82,85,90,93,96,99,102,105
+app/[locale]/privacy/page.tsx
+  78f222f2b4f65d3d 1-125
+app/[locale]/terms/page.tsx
+  78f222f2b4f65d3d 1-159
+app/[locale]/contact/page.tsx
+  78f222f2b4f65d3d 1-157
+components/layout/Navbar.tsx
+  78f222f2b4f65d3d 5,39-42,44-51,61,63-66,74
+components/layout/AdSlot.tsx
+  78f222f2b4f65d3d 24-28,34,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "16ae713f6148d25b1e9e98b95185349178be5aca",
+  "prompts": {
+    "78f222f2b4f65d3d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "cb7b0193-d51c-4389-857f-756e4d5f0c6d",
+        "model": "claude-4-sonnet"
+      },
+      "human_author": "Lakshmikanth <lakshmikanth.d@gdn-commerce.com>",
+      "messages": [],
+      "total_additions": 1218,
+      "total_deletions": 61,
+      "accepted_lines": 1211,
+      "overriden_lines": 0
+    }
+  }
+}
