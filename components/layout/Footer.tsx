@@ -1,23 +1,28 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Calculator, Mail, Shield, FileText } from 'lucide-react';
 
 export function Footer() {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'en';
+
   const calculatorLinks = [
-    { name: 'PPF Calculator', href: '/en/calculators/ppf' },
-    { name: 'FD Calculator', href: '/en/calculators/fd' },
-    { name: 'SIP Calculator', href: '/en/calculators/sip' },
-    { name: 'EMI Calculator', href: '/en/calculators/emi' },
-    { name: 'Tax Calculator', href: '/en/tax/new-vs-old-regime' },
-    { name: 'NPS Calculator', href: '/en/calculators/nps' },
+    { name: 'PPF Calculator', href: `/${locale}/calculators/ppf` },
+    { name: 'FD Calculator', href: `/${locale}/calculators/fd` },
+    { name: 'SIP Calculator', href: `/${locale}/calculators/sip` },
+    { name: 'EMI Calculator', href: `/${locale}/calculators/emi` },
+    { name: 'Tax Calculator', href: `/${locale}/tax/new-vs-old-regime` },
+    { name: 'NPS Calculator', href: `/${locale}/calculators/nps` },
   ];
 
   const legalLinks = [
-    { name: 'Privacy Policy', href: '/en/privacy' },
-    { name: 'Terms of Service', href: '/en/terms' },
-    { name: 'Disclaimer', href: '/en/disclaimer' },
-    { name: 'Contact Us', href: '/en/contact' },
+    { name: 'Privacy Policy', href: `/${locale}/privacy` },
+    { name: 'Terms of Service', href: `/${locale}/terms` },
+    { name: 'Disclaimer', href: `/${locale}/disclaimer` },
+    { name: 'Contact Us', href: `/${locale}/contact` },
+    { name: 'About Us', href: `/${locale}/about` },
   ];
 
   return (
@@ -26,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <Link href="/en" className="flex items-center space-x-2 mb-4">
+            <Link href={`/${locale}`} className="flex items-center space-x-2 mb-4">
               <img 
                 src="/svg/bharatfin-logo-transparent-dark.svg" 
                 alt="BharatFin" 
@@ -62,40 +67,42 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-display font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/en/mutual-funds/top-funds"
+                  href={`/${locale}/blog`}
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
-                  Top Mutual Funds
+                  Financial Guides
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/en/govt-schemes"
+                  href={`/${locale}/about`}
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
-                  Government Schemes
+                  About BharatFin
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/en/tax/income-tax-slabs"
+                  href={`/${locale}/disclaimer`}
+                  className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
+                >
+                  Important Disclaimers
+                </Link>
+              </li>
+              {/* TODO: Add these sections when implemented
+              <li>
+                <Link
+                  href={`/${locale}/tax/income-tax-slabs`}
                   className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
                 >
                   Tax Slabs 2025-26
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/en/news"
-                  className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
-                >
-                  Financial News
-                </Link>
-              </li>
+              */}
             </ul>
           </div>
 

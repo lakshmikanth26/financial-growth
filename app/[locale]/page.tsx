@@ -67,7 +67,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
     },
     {
       icon: Users,
-      title: 'Trusted by Millions',
+      title: 'User Friendly',
       description: 'Used by investors, professionals and financial advisors across India'
     }
   ];
@@ -91,7 +91,7 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
             {/* Quick Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600">15+</div>
+                <div className="text-3xl font-bold text-emerald-600">8+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300 dark:text-gray-400">Calculators</div>
               </div>
               <div className="text-center">

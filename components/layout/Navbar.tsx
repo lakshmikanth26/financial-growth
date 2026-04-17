@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
@@ -35,15 +36,19 @@ export function Navbar() {
     }, 150); // Small delay to allow moving to dropdown
   };
 
+  // Get current locale from pathname
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'en';
+
   const calculators = [
-    { name: 'PPF Calculator', href: '/en/calculators/ppf', icon: '🏛️', description: 'Public Provident Fund returns' },
-    { name: 'SIP Calculator', href: '/en/calculators/sip', icon: '📈', description: 'Systematic Investment Plan' },
-    { name: 'FD Calculator', href: '/en/calculators/fd', icon: '🏦', description: 'Fixed Deposit maturity' },
-    { name: 'EMI Calculator', href: '/en/calculators/emi', icon: '🏠', description: 'Loan EMI calculations' },
-    { name: 'Tax Calculator', href: '/en/tax/new-vs-old-regime', icon: '💰', description: 'New vs Old tax regime' },
-    { name: 'NPS Calculator', href: '/en/calculators/nps', icon: '👴', description: 'National Pension System' },
-    { name: 'RD Calculator', href: '/en/calculators/rd', icon: '💳', description: 'Recurring Deposit' },
-    { name: 'HRA Calculator', href: '/en/calculators/hra', icon: '🏠', description: 'House Rent Allowance' },
+    { name: 'PPF Calculator', href: `/${locale}/calculators/ppf`, icon: '🏛️', description: 'Public Provident Fund returns' },
+    { name: 'SIP Calculator', href: `/${locale}/calculators/sip`, icon: '📈', description: 'Systematic Investment Plan' },
+    { name: 'FD Calculator', href: `/${locale}/calculators/fd`, icon: '🏦', description: 'Fixed Deposit maturity' },
+    { name: 'EMI Calculator', href: `/${locale}/calculators/emi`, icon: '🏠', description: 'Loan EMI calculations' },
+    { name: 'Tax Calculator', href: `/${locale}/tax/new-vs-old-regime`, icon: '💰', description: 'New vs Old tax regime' },
+    { name: 'NPS Calculator', href: `/${locale}/calculators/nps`, icon: '👴', description: 'National Pension System' },
+    { name: 'RD Calculator', href: `/${locale}/calculators/rd`, icon: '💳', description: 'Recurring Deposit' },
+    { name: 'HRA Calculator', href: `/${locale}/calculators/hra`, icon: '🏠', description: 'House Rent Allowance' },
   ];
 
   const upcomingFeatures = [
@@ -53,13 +58,12 @@ export function Navbar() {
     { name: 'News', icon: '📰', description: 'Latest financial news & updates' },
   ];
 
+  // Only include working navigation items
   const navigation = [
-    { name: 'Home', href: '/en' },
-    { name: 'Blog', href: '/en/blog' },
-    { name: 'Tax Tools', href: '/en/tax' },
-    { name: 'Mutual Funds', href: '/en/mutual-funds' },
-    { name: 'Govt Schemes', href: '/en/govt-schemes' },
-    { name: 'News', href: '/en/news' },
+    { name: 'Home', href: `/${locale}` },
+    { name: 'Blog', href: `/${locale}/blog` },
+    { name: 'About', href: `/${locale}/about` },
+    { name: 'Contact', href: `/${locale}/contact` },
   ];
 
   return (
@@ -67,7 +71,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/en" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <img 
               src="/svg/bharatfin-logo-transparent-light.svg" 
               alt="BharatFin" 

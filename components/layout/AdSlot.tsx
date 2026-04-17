@@ -21,14 +21,17 @@ export function AdSlot({ slot, format = 'auto', style, className }: AdSlotProps)
     }
   }, []);
 
-  // Show placeholder in development
-  if (process.env.NODE_ENV === 'development') {
+  // Get the AdSense client ID - fallback to hardcoded if env var is not set
+  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || 'ca-pub-4395681760924667';
+
+  // Show placeholder in development or if no client ID
+  if (process.env.NODE_ENV === 'development' || !adsenseClientId) {
     return (
       <div 
         className={`ad-placeholder h-24 bg-gray-100 dark:bg-slate-700 border border-gray-300 dark:border-gray-600 rounded flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm ${className || ''}`}
         style={style}
       >
-        Ad Slot — {slot}
+        Ad Slot — {slot} {!adsenseClientId && '(Missing Client ID)'}
       </div>
     );
   }
@@ -37,7 +40,7 @@ export function AdSlot({ slot, format = 'auto', style, className }: AdSlotProps)
     <ins
       className={`adsbygoogle ${className || ''}`}
       style={{ display: 'block', ...style }}
-      data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}
+      data-ad-client={adsenseClientId}
       data-ad-slot={slot}
       data-ad-format={format}
       data-full-width-responsive="true"
