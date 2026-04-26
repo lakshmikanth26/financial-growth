@@ -5,7 +5,8 @@ import { calculatePPF, getCurrentPPFRate, type PPFInput } from '@/lib/calculator
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import Link from 'next/link';
 import { Calculator, ArrowLeft, Share2 } from 'lucide-react';
-import { HeaderAdSlot, InContentAdSlot, SidebarAdSlot, FooterAdSlot } from '@/components/layout/AdSlot';
+// Reduced ad slots during review period
+// import { HeaderAdSlot, InContentAdSlot, SidebarAdSlot, FooterAdSlot } from '@/components/layout/AdSlot';
 
 const COLORS = ['#1a56db', '#0e9f6e', '#ff5a1f'];
 
@@ -48,7 +49,6 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
-      <HeaderAdSlot />
       
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
@@ -147,8 +147,6 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
               </div>
             </div>
 
-            <InContentAdSlot />
-            
             {/* Results */}
             {result && (
               <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
@@ -267,7 +265,6 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-8 space-y-6">
-              <SidebarAdSlot />
               {/* Quick Tips */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                 <h3 className="font-semibold text-blue-900 mb-4">💡 Quick Tips</h3>
@@ -310,8 +307,6 @@ export default function PPFCalculatorPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </div>
-      
-      <FooterAdSlot />
     </div>
   );
 }

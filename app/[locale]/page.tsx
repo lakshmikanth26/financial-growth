@@ -181,34 +181,265 @@ export default async function SimplePage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      {/* Language Switcher */}
+      {/* Featured Articles Section */}
+      <section className="py-16 bg-gray-50 dark:bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-4">
+              Latest Financial Insights & Guides
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Expert analysis, investment strategies, and comprehensive guides to help you make informed financial decisions in 2026.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Link
+              href={`/${locale}/blog/sip-mistakes-beginners-india`}
+              className="group bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  <span className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-2 py-1 rounded text-xs font-medium">Investment</span>
+                  <span className="mx-2">•</span>
+                  <span>12 min read</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  Top 10 SIP Mistakes Indian Beginners Make
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                  Avoid costly SIP investment mistakes that can hurt your wealth creation. Learn the common errors Indian investors make and expert tips to maximize returns.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href={`/${locale}/blog/home-loan-prepayment-guide-india`}
+              className="group bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  <span className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-xs font-medium">Planning</span>
+                  <span className="mx-2">•</span>
+                  <span>14 min read</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  Home Loan Prepayment vs Investment Guide
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                  Should you prepay your home loan or invest the money? Complete analysis with decision framework for Indian homeowners in 2026.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href={`/${locale}/blog/nps-vs-ppf-retirement-planning`}
+              className="group bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded text-xs font-medium">Retirement</span>
+                  <span className="mx-2">•</span>
+                  <span>16 min read</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  NPS vs PPF: Complete Retirement Comparison
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                  Detailed analysis of returns, tax benefits, withdrawal rules, and expert recommendations to choose the best option for your retirement.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href={`/${locale}/blog`}
+              className="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              View All Articles
+              <TrendingUp className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Financial Planning for Different Life Stages */}
       <section className="py-16 bg-white dark:bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-4">
+              Financial Planning for Every Life Stage
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Tailored financial strategies and calculator recommendations based on your age and life goals
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="text-3xl mb-4">👨‍🎓</div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                Young Professional (22-30)
+              </h3>
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+                <li>• Start SIP with ₹2,000-5,000/month</li>
+                <li>• Build emergency fund (6 months)</li>
+                <li>• Focus on ELSS for tax saving</li>
+                <li>• Term insurance planning</li>
+              </ul>
+              <div className="flex space-x-2">
+                <Link href={`/${locale}/calculators/sip`} className="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded">SIP Calc</Link>
+                <Link href={`/${locale}/tax/new-vs-old-regime`} className="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded">Tax Calc</Link>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+              <div className="text-3xl mb-4">👨‍💼</div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                Mid-Career (30-40)
+              </h3>
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+                <li>• Increase SIP to ₹10,000+/month</li>
+                <li>• Home loan planning & EMI calculation</li>
+                <li>• Child education fund planning</li>
+                <li>• PPF maximization (₹1.5L annually)</li>
+              </ul>
+              <div className="flex space-x-2">
+                <Link href={`/${locale}/calculators/emi`} className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded">EMI Calc</Link>
+                <Link href={`/${locale}/calculators/ppf`} className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded">PPF Calc</Link>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-6 rounded-xl border border-orange-200 dark:border-orange-800">
+              <div className="text-3xl mb-4">👨‍💻</div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                Peak Career (40-50)
+              </h3>
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+                <li>• Aggressive retirement planning</li>
+                <li>• NPS additional contributions</li>
+                <li>• Debt consolidation strategies</li>
+                <li>• High-value insurance planning</li>
+              </ul>
+              <div className="flex space-x-2">
+                <Link href={`/${locale}/calculators/nps`} className="text-xs bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-2 py-1 rounded">NPS Calc</Link>
+                <Link href={`/${locale}/calculators/fd`} className="text-xs bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-2 py-1 rounded">FD Calc</Link>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+              <div className="text-3xl mb-4">👴</div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                Pre-Retirement (50+)
+              </h3>
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+                <li>• Conservative investment approach</li>
+                <li>• FD vs debt fund comparison</li>
+                <li>• Health insurance optimization</li>
+                <li>• Estate planning basics</li>
+              </ul>
+              <div className="flex space-x-2">
+                <Link href={`/${locale}/calculators/fd`} className="text-xs bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded">FD Calc</Link>
+                <Link href={`/${locale}/calculators/rd`} className="text-xs bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded">RD Calc</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Current Financial Trends 2026 */}
+      <section className="py-16 bg-gray-50 dark:bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-4">
+              Key Financial Updates for 2026
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Stay updated with the latest rates, tax changes, and investment opportunities
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">7.1%</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">PPF Interest Rate</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Q1 FY 2026-27</p>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Current PPF rate remains stable at 7.1% per annum. With tax-free returns, 
+                effective yield is higher for investors in 20-30% tax brackets.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-green-600 dark:text-green-400 font-bold">₹2L</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">Tax Deduction Limit</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">80C + 80CCD(1B)</p>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Maximum tax deduction of ₹2 lakh possible: ₹1.5L under Section 80C 
+                plus additional ₹50k under 80CCD(1B) for NPS contributions.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold">6-7%</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">FD Interest Rates</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Major Banks Average</p>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Fixed deposit rates range from 6.0% to 7.5% across major banks. 
+                Senior citizens get additional 0.25-0.5% premium on FD rates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Language Switcher - Simplified */}
+      <section className="py-12 bg-white dark:bg-slate-800">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-3xl text-gray-900 dark:text-gray-100 mb-8">
-            Available in 8 Indian Languages
+          <h2 className="font-bold text-2xl text-gray-900 dark:text-gray-100 mb-6">
+            Available in Multiple Indian Languages
           </h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
+            Access our calculators and content in your preferred language for better understanding of financial concepts.
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { code: 'en', name: 'English', flag: '🇮🇳' },
-              { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
-              { code: 'ta', name: 'தமிழ்', flag: '🇮🇳' },
-              { code: 'te', name: 'తెలుగు', flag: '🇮🇳' },
-              { code: 'kn', name: 'ಕನ್ನಡ', flag: '🇮🇳' },
-              { code: 'bn', name: 'বাংলা', flag: '🇮🇳' },
-              { code: 'mr', name: 'मराठी', flag: '🇮🇳' },
-              { code: 'gu', name: 'ગુજરાતી', flag: '🇮🇳' }
+              { code: 'hi', name: 'हिंदी', flag: '🇮🇳' }
             ].map((lang) => (
-              <Link
+              <div
                 key={lang.code}
-                href={`/${lang.code}/simple-page`}
-                className={`p-4 border rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors ${
+                className={`p-4 border rounded-lg ${
                   locale === lang.code ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30' : 'border-gray-200 dark:border-gray-600'
                 }`}
               >
                 <div className="text-2xl mb-2">{lang.flag}</div>
                 <div className="font-medium text-gray-900 dark:text-gray-100">{lang.name}</div>
-              </Link>
+              </div>
             ))}
+            <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg opacity-60">
+              <div className="text-2xl mb-2">🚧</div>
+              <div className="font-medium text-gray-500 dark:text-gray-400 text-sm">More languages coming soon</div>
+            </div>
           </div>
         </div>
       </section>

@@ -115,50 +115,175 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </div>
             </div>
 
+            {/* Our Team and Expertise */}
             <div className="mb-12">
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-8 text-center">
-                Our Financial Tools
+                Our Team & Expertise
               </h2>
               
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BookOpen className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    Financial Expertise
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Our team includes certified financial planners, tax experts, and investment professionals with 
+                    extensive experience in Indian financial markets and regulations.
+                  </p>
+                </div>
+                
+                <div className="text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                  <div className="w-16 h-16 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-8 w-8 text-green-600 dark:text-green-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    Technical Innovation
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Built by technology professionals who understand both finance and software development, 
+                    ensuring accurate calculations and excellent user experience.
+                  </p>
+                </div>
+                
+                <div className="text-center p-6 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    User-Centric Design
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Every tool is designed based on real user feedback and common financial planning scenarios 
+                    faced by Indian investors and professionals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Our Comprehensive Financial Tools */}
+            <div className="mb-12">
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-8 text-center">
+                Comprehensive Financial Calculator Suite
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 text-center mb-10 max-w-3xl mx-auto">
+                Over 15 specialized calculators covering every aspect of Indian financial planning, 
+                from basic savings to complex investment scenarios.
+              </p>
+              
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Investment Calculators</h4>
-                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                    <li>• PPF Calculator</li>
-                    <li>• SIP Calculator</li>
-                    <li>• FD Calculator</li>
-                    <li>• RD Calculator</li>
-                    <li>• NPS Calculator</li>
+                <div className="p-6 border border-gray-200 dark:border-gray-600 rounded-xl hover:shadow-md transition-shadow bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-blue-100 dark:bg-blue-800 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-blue-600 dark:text-blue-400 text-sm font-bold">₹</span>
+                    </div>
+                    Investment Calculators
+                  </h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>• <strong>PPF Calculator</strong> - 15-year wealth building</li>
+                    <li>• <strong>SIP Calculator</strong> - Mutual fund investments</li>
+                    <li>• <strong>FD Calculator</strong> - Fixed deposit returns</li>
+                    <li>• <strong>RD Calculator</strong> - Recurring deposits</li>
+                    <li>• <strong>NPS Calculator</strong> - Retirement planning</li>
                   </ul>
                 </div>
                 
-                <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Loan Calculators</h4>
-                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                    <li>• EMI Calculator</li>
-                    <li>• Home Loan Calculator</li>
-                    <li>• Personal Loan Calculator</li>
-                    <li>• Car Loan Calculator</li>
+                <div className="p-6 border border-gray-200 dark:border-gray-600 rounded-xl hover:shadow-md transition-shadow bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-green-600 dark:text-green-400 text-sm font-bold">🏠</span>
+                    </div>
+                    Loan Calculators
+                  </h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>• <strong>EMI Calculator</strong> - Monthly payments</li>
+                    <li>• <strong>Home Loan</strong> - Property financing</li>
+                    <li>• <strong>Personal Loan</strong> - Quick funding</li>
+                    <li>• <strong>Car Loan</strong> - Vehicle financing</li>
+                    <li>• <strong>Education Loan</strong> - Study abroad</li>
                   </ul>
                 </div>
                 
-                <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Tax Tools</h4>
-                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                    <li>• Income Tax Calculator</li>
-                    <li>• HRA Calculator</li>
-                    <li>• Tax Regime Comparison</li>
-                    <li>• Capital Gains Calculator</li>
+                <div className="p-6 border border-gray-200 dark:border-gray-600 rounded-xl hover:shadow-md transition-shadow bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-purple-100 dark:bg-purple-800 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-purple-600 dark:text-purple-400 text-sm font-bold">🎯</span>
+                    </div>
+                    Tax & Planning Tools
+                  </h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>• <strong>Income Tax</strong> - New vs Old regime</li>
+                    <li>• <strong>HRA Calculator</strong> - Rent exemptions</li>
+                    <li>• <strong>Capital Gains</strong> - Investment tax</li>
+                    <li>• <strong>80C Planner</strong> - Tax saving</li>
+                    <li>• <strong>TDS Calculator</strong> - Deductions</li>
                   </ul>
                 </div>
                 
-                <div className="p-4 border border-gray-200 dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Comparison Tools</h4>
-                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                    <li>• Bank FD Rates</li>
-                    <li>• Investment Options</li>
-                    <li>• Loan Interest Rates</li>
-                    <li>• Tax Saving Options</li>
+                <div className="p-6 border border-gray-200 dark:border-gray-600 rounded-xl hover:shadow-md transition-shadow bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-800 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-orange-600 dark:text-orange-400 text-sm font-bold">⚖️</span>
+                    </div>
+                    Comparison & Analysis
+                  </h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                    <li>• <strong>Bank FD Rates</strong> - Best deposits</li>
+                    <li>• <strong>Investment Options</strong> - Portfolio</li>
+                    <li>• <strong>Loan Rates</strong> - Best deals</li>
+                    <li>• <strong>Insurance Plans</strong> - Coverage</li>
+                    <li>• <strong>Mutual Funds</strong> - Top performers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Why Financial Professionals Recommend BharatFin */}
+            <div className="mb-12">
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-8 text-center">
+                Why Financial Professionals Recommend BharatFin
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Accuracy & Reliability</h3>
+                  <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+                    <li>✓ Formulas verified by certified financial planners</li>
+                    <li>✓ Regular updates to reflect current tax laws and rates</li>
+                    <li>✓ Calculations cross-checked with bank and government sources</li>
+                    <li>✓ Compliant with SEBI, RBI, and IRDAI guidelines</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Educational Value</h3>
+                  <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+                    <li>✓ Detailed explanations of financial concepts</li>
+                    <li>✓ Real-world examples with Indian scenarios</li>
+                    <li>✓ Best practices and common mistake warnings</li>
+                    <li>✓ Investment strategy guidance for different life stages</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Privacy & Security</h3>
+                  <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+                    <li>✓ All calculations performed locally in your browser</li>
+                    <li>✓ No financial data transmitted or stored on servers</li>
+                    <li>✓ Complete privacy protection for sensitive information</li>
+                    <li>✓ No registration required for basic calculations</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">User Experience</h3>
+                  <ul className="text-gray-600 dark:text-gray-400 space-y-2 text-sm">
+                    <li>✓ Fast, responsive interface optimized for all devices</li>
+                    <li>✓ Instant results as you type input values</li>
+                    <li>✓ Visual charts and graphs for better understanding</li>
+                    <li>✓ Multilingual support for regional users</li>
                   </ul>
                 </div>
               </div>
