@@ -1,0 +1,35 @@
+app/[locale]/page.tsx
+  af6144f36bfde929 3-50,463-637,645-702,704-716
+lib/blog/internal-links.ts
+  af6144f36bfde929 44-54
+app/[locale]/calculators/emi/page.tsx
+  af6144f36bfde929 1-26,28,30-31
+lib/blog/data.ts
+  af6144f36bfde929 2249-2914
+app/[locale]/calculators/emi/EMICalculatorClient.tsx
+  af6144f36bfde929 1-471
+app/sitemap.xml/route.ts
+  af6144f36bfde929 20-28,74-85
+public/robots.txt
+  af6144f36bfde929 4-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "a85c0f2db209fd3e71f6928fec6ce3aa561adbc1",
+  "prompts": {
+    "af6144f36bfde929": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "70a97cea-8d68-4e11-8576-b89f5399a336",
+        "model": "claude-4-sonnet"
+      },
+      "human_author": "Lakshmikanth <lakshmikanth.d@gdn-commerce.com>",
+      "messages": [],
+      "total_additions": 1906,
+      "total_deletions": 716,
+      "accepted_lines": 1533,
+      "overriden_lines": 0
+    }
+  }
+}
