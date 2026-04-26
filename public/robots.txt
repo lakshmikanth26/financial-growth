@@ -1,4 +1,40 @@
 User-agent: *
 Allow: /
 
+# High priority pages for crawling
+Allow: /en/
+Allow: /en/calculators/
+Allow: /en/blog/
+Allow: /hi/
+Allow: /hi/calculators/
+
+# Important financial calculators
+Allow: /en/calculators/sip
+Allow: /en/calculators/ppf
+Allow: /en/calculators/emi
+Allow: /en/calculators/fd
+Allow: /en/tax/new-vs-old-regime
+
+# Trust pages
+Allow: /en/about
+Allow: /en/contact
+Allow: /en/privacy
+Allow: /en/terms
+Allow: /en/disclaimer
+Allow: /en/editorial-policy
+
+# Blog content
+Allow: /en/blog/
+
+# Disallow admin and development files
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: *.json$
+
+# Sitemap location
 Sitemap: https://bharathfin.vercel.app/sitemap.xml
+
+# Crawl-delay to be respectful
+Crawl-delay: 1

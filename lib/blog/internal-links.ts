@@ -41,6 +41,17 @@ export const blogKeywords = {
   'tax planning': '/blog/how-to-save-tax-india',
   'Section 80C': '/blog/how-to-save-tax-india',
   'section 80c': '/blog/how-to-save-tax-india',
+  'SIP mistakes': '/blog/sip-mistakes-beginners-india',
+  'sip mistakes': '/blog/sip-mistakes-beginners-india',
+  'home loan prepayment': '/blog/home-loan-prepayment-guide-india',
+  'NPS vs PPF': '/blog/nps-vs-ppf-retirement-planning',
+  'nps vs ppf': '/blog/nps-vs-ppf-retirement-planning',
+  'retirement planning': '/blog/nps-vs-ppf-retirement-planning',
+  'FD vs SIP': '/blog/fd-vs-sip-beginners-india',
+  'fd vs sip': '/blog/fd-vs-sip-beginners-india',
+  'emergency fund': '/blog/best-emergency-fund-strategy-india',
+  'emergency fund strategy': '/blog/best-emergency-fund-strategy-india',
+  'financial planning': '/blog/financial-planning-basics-india',
 };
 
 // Combine all keywords

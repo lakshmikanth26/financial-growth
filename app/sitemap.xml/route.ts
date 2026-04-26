@@ -17,6 +17,15 @@ export async function GET() {
     '/calculators/hra',
     '/tax/new-vs-old-regime'
   ]
+
+  const trustPages = [
+    '/about',
+    '/contact',
+    '/privacy',
+    '/terms',
+    '/disclaimer',
+    '/editorial-policy'
+  ]
   
   // Get blog posts and banks for programmatic SEO
   const blogPosts = getAllBlogPosts()
@@ -58,6 +67,18 @@ export async function GET() {
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>`)
+    })
+  })
+
+  // Trust and legal pages for each locale
+  locales.forEach(locale => {
+    trustPages.forEach(path => {
+      urls.push(`  <url>
+    <loc>${siteUrl}/${locale}${path}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>`)
     })
   })
