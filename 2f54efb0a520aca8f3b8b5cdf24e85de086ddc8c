@@ -1,0 +1,23 @@
+lib/blog/data.ts
+  af6144f36bfde929 1043-1044,1046,1048,1050,1052,1054,1056,1058,1060,1062,1064,1066,1068,1070,1072,1074,1076,1078,1080,1082,1084,1086,1088,1090,1094,1096,1098-1104,1106-1122,1124-1158,1160-1198,1200-1205,1207-1214,1216,1218-1363,1366,1368-1370,1400-1401,1404-1405,1427
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "2f54efb0a520aca8f3b8b5cdf24e85de086ddc8c",
+  "prompts": {
+    "af6144f36bfde929": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "70a97cea-8d68-4e11-8576-b89f5399a336",
+        "model": "claude-4-sonnet"
+      },
+      "human_author": "Lakshmikanth <lakshmikanth.d@gdn-commerce.com>",
+      "messages": [],
+      "total_additions": 311,
+      "total_deletions": 278,
+      "accepted_lines": 311,
+      "overriden_lines": 0
+    }
+  }
+}
